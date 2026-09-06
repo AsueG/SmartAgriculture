@@ -10,6 +10,9 @@ dotnet build -t:Deploy -v:m
 `Deploy` copies `About/`, `1.6/` and `Languages/` into the RimWorld `Mods/` folder. Override the
 managed folder with `-p:RimWorldManaged="…\RimWorldWin64_Data\Managed"` if the Steam path guess fails.
 
+`About/About.xml` carries `<modVersion>`, which the game only ever displays — nothing parses it. Bump it
+on release; leaving it out is what makes the mod list read "unknown".
+
 `1.6/Assemblies/SmartAgriculture.dll` is committed on purpose — a GitHub download has to be playable
 without a build step. Commit it with the source change that produced it.
 
