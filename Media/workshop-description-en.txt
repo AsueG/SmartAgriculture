@@ -1,0 +1,76 @@
+[h1]Smart Agriculture, Climate & Colony Logistics[/h1]
+
+Eight independent farming, climate and logistics modules. Every one of them can be switched on or off from the mod settings at any time, mid-game, without restarting — and a module that is off does nothing at all.
+
+You configure it all from one place: [b]select a grow zone and click the new button on its gizmo bar.[/b]
+
+[hr][/hr]
+[h1]The modules[/h1]
+
+[h2]1. Field-wide crop rotation[/h2]
+[b]The problem:[/b] you switch a zone to a new crop, and because your colonists harvest a cell at a time, the field turns into a checkerboard of half-grown rice next to ripe corn. Nothing ever ripens together again.
+[b]What this does:[/b] the zone follows an ordered list of 2 to 4 crops, and only moves to the next one once the last plant of the current crop is gone. Cells harvested early simply stay bare and wait for the rest of the field. One clean sweep per crop instead of a permanent mess.
+Two more kinds of step are available: a [b]fallow[/b] break, which rests the soil and is worth real growth later on (module 8), and [b]random[/b], which rolls a crop that can actually survive — and ideally ripen — in the weather you have when that step comes round.
+
+[h2]2. Stock-triggered farming[/h2]
+[b]The problem:[/b] you are sitting on 4000 rice and your farmers keep planting rice.
+[b]What this does:[/b] each field watches how much of its own produce the colony holds. Cross the high threshold and it switches to a crop you nominate, or stops sowing entirely. Drop back under the low threshold and it picks up again. Two separate thresholds keep it from flip-flopping every few hours. It reads the stock counter the game already maintains, so this costs nothing in performance.
+
+[h2]3. Seasonal crop scheduler[/h2]
+[b]The problem:[/b] the crop that makes sense in spring is the wrong one in autumn, and remembering to change it by hand is a chore.
+[b]What this does:[/b] one tab per season. Give each season a fixed crop, hand it over to the rotation, or leave it fallow. The switch happens on its own as the calendar turns.
+
+[h2]4. True greenhouse climate control[/h2]
+[b]The problem:[/b] a room with a glass roof behaves exactly like a room with a stone roof. Sunlight does nothing for the temperature.
+[b]What this does:[/b] an enclosed room under a transparent roof warms through the day in proportion to actual sunlight, instead of just tracking the outdoor temperature. Adds a glazing frame to build that roof, and an automated roof vent that opens to dump heat once the room passes a temperature you set. Free winter growing if you build it well — and a real risk of cooking your crops in summer if you do not.
+Already running a skylight mod? Its roof is detected and given the same thermal behaviour, and this mod's own frame is hidden, so you never end up with two of everything.
+
+[h2]5. Field harvest crates[/h2]
+[b]The problem:[/b] a big harvest leaves produce scattered over a hundred tiles, and your haulers walk it back to the freezer one armful at a time.
+[b]What this does:[/b] adds a light, movable crate you place at the field edge. Harvesters drop produce straight into it. Once it fills up, or once its field is done, the whole batch is flagged for pickup and taken away together. Underneath it is an ordinary storage building, so vanilla hauling, storage groups, the storage tab and Pick Up And Haul all work with it unchanged.
+
+[h2]6. Weather-driven work priorities[/h2]
+[b]The problem:[/b] it is 45 degrees outside, or there is toxic fallout, and someone is standing in a field cutting plants until they collapse.
+[b]What this does:[/b] while conditions outside are genuinely dangerous — killing heat, a deadly cold snap, toxic fallout and the like — outdoor work types are held back so colonists pick up indoor jobs instead. Growing, plant cutting and mining are covered, and each one can be excluded in the settings if you would rather manage it yourself.
+
+[h2]7. Pantry first, rot-aware cooking[/h2]
+[b]The problem:[/b] cooks always grab the nearest ingredients, so the berries about to spoil sit there spoiling while the fresh rice gets eaten.
+[b]What this does:[/b] ingredients are ordered by how long they have left before rotting, closest to spoiling first, with distance only breaking ties. Perishable food gets used before it turns. It only kicks in when something in reach is genuinely near spoiling, so cooks are never sent on long walks for no reason.
+
+[h2]8. Soil rest[/h2]
+[b]The problem:[/b] leaving a field fallow is what real farmers do, but in RimWorld it buys you absolutely nothing. A fallow step is pure waiting.
+[b]What this does:[/b] resting a field banks a fertility reserve in its soil, and the crops that follow spend that reserve by growing faster. The reserve fills to a ceiling worth about as much as rich soil, and empties more slowly than it filled, so one fallow break is spread over several harvests. The reserve is only ever added on top of the terrain's own fertility, never subtracted, so a field can never end up unfarmable and a player who ignores fallow loses nothing. The field plan window shows what each field has banked, and a fallow step can work its own length out — just enough days to fill the reserve — or you can type the number yourself.
+
+[hr][/hr]
+[h1]Adding this mod to a game in progress[/h1]
+
+[b]Yes, and nothing needs to be reset.[/b] Load an existing save with the mod enabled and it simply starts working: the store it keeps for your fields is created empty on load, every field starts with no plan and behaves exactly as it did before, and you enable what you want field by field. The new buildings appear in the build menu straight away. The eight module switches also take effect immediately, mid-game, so you can try one module and turn it off again without ever restarting.
+
+Removing it later is just as safe. The save still loads; you lose the field plans and any banked soil reserve, and the zones fall back to the crop set on the zone itself. Deconstruct the glazed roof, the roof vent and the crates first, otherwise those tiles come back as plain rubble.
+
+[hr][/hr]
+[h1]Compatibility[/h1]
+
+Crop lists are queried from the def database at runtime, so crops from Vanilla Plants Expanded, VGP and anything else appear on their own with no patch needed. No third-party assembly is ever referenced: other mods are detected through the loaded mod list and their content through silent def lookups, so nothing breaks when a mod is absent. Every hook is additive — nothing vanilla is replaced, skipped or rewritten — which is why the mods below coexist with it rather than fight it.
+
+Checked against the popular mods that touch the same vanilla methods:
+
+[list]
+[*][b]Smart Farming[/b] — compatible, and the two do different jobs. It never gets in the way of rotation, because this mod decides what to sow without ever rewriting the crop set on the zone. Both mods add their own button to a grow zone, so you get both.
+[*][b]Vanilla Plants Expanded[/b] and its submodules, [b]VGP[/b], [b]Medieval Overhaul[/b] — compatible. Their crops show up in the crop pickers on their own. One small caveat: extra harvest yields that another mod spawns itself land on the ground rather than in a harvest crate.
+[*][b]Vanilla Expanded Framework[/b] — compatible on all five shared methods. Its ingredient handling works on mixed-ingredient recipes, which module 7 deliberately leaves alone.
+[*][b]Common Sense[/b] — compatible. Same reason: it sorts the mixed-ingredient path, module 7 sorts the normal cooking path.
+[*][b]Hospitality[/b], [b]Hospital[/b] — compatible. Their work-priority changes and module 6 stack, and dangerous weather still wins.
+[*][b]LWM's Deep Storage[/b], [b]Adaptive Storage Framework[/b], [b]Pick Up And Haul[/b] — compatible. A harvest crate is an ordinary storage building, so whatever those mods add to storage applies to it too.
+[*][b]Dubs Skylights[/b] and other skylight mods — better than compatible. Their roof is detected and given the greenhouse thermal model, and this mod's own glazing frame hides itself so you never see two of everything.
+[*][b]Keyz' Allow Utilities[/b], [b]Progression: Education[/b], [b]Nice Bill Tab[/b] — compatible, no overlap.
+[/list]
+
+No load order requirements beyond Harmony. If you ever want to check what was detected, the startup log carries a line beginning with [SACL].
+
+[hr][/hr]
+[h1]Saves[/h1]
+
+No vanilla class is replaced, and no vanilla behaviour is skipped or rewritten. Nothing is bolted onto the grow zones themselves either: everything this mod remembers about your fields lives in its own map component, keyed by zone ID, which is why the save still loads once you remove the mod.
+
+[b]Requires Harmony.[/b]

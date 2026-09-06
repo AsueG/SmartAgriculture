@@ -1,0 +1,82 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>SmartAgriculture</AssemblyName>
+    <RootNamespace>SmartAgriculture</RootNamespace>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <OutputPath>..\1.6\Assemblies\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <DebugType>none</DebugType>
+    <Deterministic>true</Deterministic>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <EnableDefaultCompileItems>true</EnableDefaultCompileItems>
+    <NoWarn>MSB3277</NoWarn>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <!-- RimWorld 1.6 managed folder. Override on the command line if your install differs:
+       dotnet build -p:RimWorldManaged="D:\Path\RimWorldWin64_Data\Managed" -->
+  <PropertyGroup>
+    <RimWorldManaged Condition="'$(RimWorldManaged)' == '' And Exists('E:\Games\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed')">E:\Games\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed</RimWorldManaged>
+    <RimWorldManaged Condition="'$(RimWorldManaged)' == '' And Exists('D:\Games\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed')">D:\Games\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed</RimWorldManaged>
+    <RimWorldManaged Condition="'$(RimWorldManaged)' == '' And Exists('C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed')">C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed</RimWorldManaged>
+    <RimWorldModsDir Condition="'$(RimWorldModsDir)' == '' And '$(RimWorldManaged)' != ''">$([System.IO.Path]::GetFullPath('$(RimWorldManaged)\..\..\Mods'))</RimWorldModsDir>
+  </PropertyGroup>
+
+  <Target Name="ValidateRimWorldPath" BeforeTargets="BeforeBuild" Condition="'$(RimWorldManaged)' == ''">
+    <Error Text="RimWorld managed folder not found. Pass -p:RimWorldManaged=&quot;&lt;path&gt;\RimWorldWin64_Data\Managed&quot;." />
+  </Target>
+
+  <!-- Game assemblies: compile-time only, never copied next to the mod dll. -->
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(RimWorldManaged)\Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(RimWorldManaged)\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>$(RimWorldManaged)\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>$(RimWorldManaged)\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>$(RimWorldManaged)\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- Harmony is shipped by the game/Harmony mod: reference only, never redistribute.
+       No third-party mod dll is ever referenced here: soft dependencies go through
+       LoadedModManager + DefDatabase.GetNamedSilentFail + reflection (see ModCompat.cs). -->
+  <ItemGroup>
+    <PackageReference Include="Lib.Harmony" Version="2.3.3" ExcludeAssets="runtime" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
+
+  <!-- "dotnet build -t:Deploy" copies the whole mod into the RimWorld Mods folder. -->
+  <Target Name="Deploy" DependsOnTargets="Build">
+    <PropertyGroup>
+      <DeployDir>$(RimWorldModsDir)\SmartAgriculture</DeployDir>
+    </PropertyGroup>
+    <ItemGroup>
+      <AboutFiles Include="..\About\**\*" />
+      <VersionFiles Include="..\1.6\**\*" />
+      <LangFiles Include="..\Languages\**\*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(AboutFiles)" DestinationFiles="@(AboutFiles->'$(DeployDir)\About\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(VersionFiles)" DestinationFiles="@(VersionFiles->'$(DeployDir)\1.6\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(LangFiles)" DestinationFiles="@(LangFiles->'$(DeployDir)\Languages\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+    <Message Importance="high" Text="Deployed to $(DeployDir)" />
+  </Target>
+
+</Project>

@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Mod settings -->
+  <SACL.ModTitle>Smart Agriculture, Climate &amp; Colony Logistics</SACL.ModTitle>
+  <SACL.SettingsHint>Every module below can be switched on or off at any time, mid-game, without restarting. A module that is off does nothing at all and leaves no trace in your save.</SACL.SettingsHint>
+  <SACL.AllModulesOff>All field modules are switched off in the mod settings.</SACL.AllModulesOff>
+
+  <SACL.Module1>Module 1 - field-wide crop rotation</SACL.Module1>
+  <SACL.Module1Desc>A grow zone follows an ordered list of 2 to 4 crops. It only moves on to the next crop once every single plant of the current one is gone, so cells harvested early stay bare instead of turning the field into a checkerboard. A fallow step can be inserted anywhere in the list.</SACL.Module1Desc>
+  <SACL.DefaultFallowDays>Default fallow length: {0} days</SACL.DefaultFallowDays>
+
+  <SACL.Module2>Module 2 - stock-triggered farming</SACL.Module2>
+  <SACL.Module2Desc>Each field watches the colony stock of the crop it produces. Above the high threshold it switches to a secondary crop, or stops sowing altogether; it resumes once stock falls back under the low threshold. Stock is read from the counter the game already maintains, never by scanning the map.</SACL.Module2Desc>
+  <SACL.DefaultStockEnabled>Watch stock as soon as a field is configured</SACL.DefaultStockEnabled>
+  <SACL.DefaultStockEnabledDesc>A field whose plan you open for the first time arrives with stock watching already on. Clear this if you would rather enable it field by field.</SACL.DefaultStockEnabledDesc>
+  <SACL.DefaultStockHigh>Default high threshold: {0}</SACL.DefaultStockHigh>
+  <SACL.DefaultStockLow>Default low threshold: {0}</SACL.DefaultStockLow>
+
+  <SACL.Module3>Module 3 - seasonal crop scheduler</SACL.Module3>
+  <SACL.Module3Desc>One crop, one rotation, or nothing at all per calendar season. The field switches over on its own as the seasons turn.</SACL.Module3Desc>
+
+  <SACL.Module4>Module 4 - greenhouse climate control</SACL.Module4>
+  <SACL.Module4Desc>Enclosed rooms roofed with glass soak up the warmth of the day instead of tracking the outdoor temperature. Adds a glazing frame and an automated roof vent that bleeds off excess heat.</SACL.Module4Desc>
+  <SACL.SolarGain>Solar gain: {0} °C per glazed cell per second</SACL.SolarGain>
+  <SACL.GreenhouseMaxDelta>Maximum warmth above outdoors: {0} °C</SACL.GreenhouseMaxDelta>
+  <SACL.HideFallbackSkylight>Hide the built-in glazing frame when another skylight mod is active</SACL.HideFallbackSkylight>
+  <SACL.HideFallbackSkylightDesc>Leave this on to avoid two near-identical buildings in your architect menu. The thermal behaviour is applied to the other mod's roof either way.</SACL.HideFallbackSkylightDesc>
+  <SACL.GreenhouseCompatStatus>Transparent roofs found: {0}</SACL.GreenhouseCompatStatus>
+
+  <SACL.Module5>Module 5 - field harvest crates</SACL.Module5>
+  <SACL.Module5Desc>Harvesters drop produce straight into a crate at the field edge instead of scattering it over the soil. Once a crate is full, or its field has been cleared, the whole batch is hauled off in one trip.</SACL.Module5Desc>
+  <SACL.CrateRadius>Crate search radius: {0} cells</SACL.CrateRadius>
+
+  <SACL.Module6>Module 6 - weather-driven priorities</SACL.Module6>
+  <SACL.Module6Desc>While the outside is lethal - killing heat, a deadly cold snap, toxic fallout and the like - outdoor work types are held back so colonists pick up indoor jobs instead.</SACL.Module6Desc>
+  <SACL.HazardHeat>Heat threshold: {0} °C</SACL.HazardHeat>
+  <SACL.HazardCold>Cold threshold: {0} °C</SACL.HazardCold>
+  <SACL.HazardGrowing>Hold back Growing (also pauses greenhouse work)</SACL.HazardGrowing>
+  <SACL.HazardPlantCutting>Hold back Plant cutting</SACL.HazardPlantCutting>
+  <SACL.HazardMining>Hold back Mining</SACL.HazardMining>
+  <SACL.HazardReasonHeat>killing heat ({0})</SACL.HazardReasonHeat>
+  <SACL.HazardReasonCold>deadly cold ({0})</SACL.HazardReasonCold>
+
+  <SACL.Module7>Module 7 - pantry first</SACL.Module7>
+  <SACL.Module7Desc>Cooks reach for the ingredients closest to spoiling rather than the ones closest to hand, so food gets eaten before it rots.</SACL.Module7Desc>
+  <SACL.PantryCookingOnly>Cooking recipes only</SACL.PantryCookingOnly>
+  <SACL.PantryCookingOnlyDesc>Leave this on to keep the change confined to the kitchen. Switch it off to apply the same ordering to every bill that takes perishable ingredients.</SACL.PantryCookingOnlyDesc>
+  <SACL.PantryHorizon>Only reorder food spoiling within {0} days</SACL.PantryHorizon>
+
+  <SACL.Module8>Module 8 - soil rest</SACL.Module8>
+  <SACL.Module8Desc>A fallow step stops being dead time: it banks a fertility reserve on the field's cells, which the crops that follow spend by growing faster. The reserve is only ever added to the terrain's own fertility, never taken away, so a field can never end up unfarmable and ignoring fallow costs you nothing you were not already paying.</SACL.Module8Desc>
+  <SACL.SoilRestCap>Reserve ceiling: +{0} fertility</SACL.SoilRestCap>
+  <SACL.SoilRestPerDay>Banked: {0} fertility per day of rest</SACL.SoilRestPerDay>
+  <SACL.SoilRestDrain>Spent: {0} fertility per day of growth</SACL.SoilRestDrain>
+  <SACL.SoilRestHint>At these rates a full reserve takes {0} days of fallow and then feeds {1} days of enriched growth. Spending is deliberately slower than banking: fertility only affects growth speed, so spreading the bonus over several harvests is the only way resting pays for itself.</SACL.SoilRestHint>
+
+  <!-- Field plan window -->
+  <SACL.FieldPlanGizmo>Field plan</SACL.FieldPlanGizmo>
+  <SACL.FieldPlanGizmoDesc>Set up crop rotation, a season schedule and stock thresholds for this field.</SACL.FieldPlanGizmoDesc>
+  <SACL.FieldPlanGizmoDescActive>Set up crop rotation, a season schedule and stock thresholds for this field.\n\nCurrently: {0}</SACL.FieldPlanGizmoDescActive>
+  <SACL.FieldPlanTitle>Field plan: {0}</SACL.FieldPlanTitle>
+  <SACL.TabRotation>Rotation</SACL.TabRotation>
+  <SACL.TabStock>Stock</SACL.TabStock>
+
+  <SACL.RotationEnable>Run a crop rotation on this field</SACL.RotationEnable>
+  <SACL.RotationEnableDesc>The field works through the list below in order. It only moves on once every plant of the current stage has been harvested or cut.</SACL.RotationEnableDesc>
+  <SACL.RotationDisabledHint>Rotation is off: this field sows whatever crop is set on the zone itself.</SACL.RotationDisabledHint>
+  <SACL.RotationStagesHeader>Stages ({0} of {1})</SACL.RotationStagesHeader>
+  <SACL.RotationAddStage>Add a stage</SACL.RotationAddStage>
+  <SACL.RotationRestart>Restart from the first stage</SACL.RotationRestart>
+  <SACL.RotationNeedsTwo>A rotation needs at least two stages to do anything.</SACL.RotationNeedsTwo>
+  <SACL.RotationEmpty>no stages set</SACL.RotationEmpty>
+  <SACL.PhaseSowing>sowing {0}</SACL.PhaseSowing>
+  <SACL.PhaseRipening>waiting on {0} - {1} plants still standing</SACL.PhaseRipening>
+  <SACL.PhaseFallow>fallow for another {0} days</SACL.PhaseFallow>
+  <SACL.PhaseRandomWaiting>waiting for weather a random crop can survive</SACL.PhaseRandomWaiting>
+  <SACL.FallowOption>Fallow (rest the soil)</SACL.FallowOption>
+  <SACL.FallowStage>Fallow, {0} days</SACL.FallowStage>
+  <SACL.RandomOption>Random (a crop that suits the season)</SACL.RandomOption>
+  <SACL.RandomStage>Random crop</SACL.RandomStage>
+  <SACL.RandomStageRolled>Random: {0}</SACL.RandomStageRolled>
+  <SACL.Days>Days</SACL.Days>
+  <SACL.DaysDesc>How many days the field is left bare.\n\nThe rest is not dead time: each day banks fertility in the soil, and the crops that follow spend that reserve by growing faster. 3 days give a small nudge, a full reserve brings the soil up to rich soil. Days past the reserve ceiling do nothing.</SACL.DaysDesc>
+  <SACL.DaysDescBare>How many days the field is left bare before moving on to the next stage.\n\nThe soil rest module is switched off, so the length does nothing but hold the next stage back. Switch that module on to make a fallow genuinely enrich the soil.</SACL.DaysDescBare>
+  <SACL.FallowAuto>auto</SACL.FallowAuto>
+  <SACL.FallowAutoDesc>Let the length work itself out: just enough days to fill this field's fertility reserve, counting whatever is left in it already. It is recomputed every time the stage comes round.\n\nClear this to type the number of days yourself. With the soil rest module switched off the calculation falls back to the default length from the settings.</SACL.FallowAutoDesc>
+  <SACL.SoilReserve>Soil reserve: +{0} fertility of +{1} ({2})</SACL.SoilReserve>
+  <SACL.SoilReserveDesc>What this field's fallow steps have banked, averaged over its cells.\n\nThe reserve is added on top of the terrain's fertility and makes crops grow faster, then empties as they grow. Set up under the soil rest module.</SACL.SoilReserveDesc>
+  <SACL.NoCrop>no crop</SACL.NoCrop>
+  <SACL.NoYield>nothing</SACL.NoYield>
+  <SACL.Yields>yields {0}</SACL.Yields>
+  <SACL.PickCrop>Pick a crop...</SACL.PickCrop>
+  <SACL.NoSowablePlants>Nothing can be sown on this field right now.</SACL.NoSowablePlants>
+
+  <!-- Crop picker -->
+  <SACL.PickCropForStage>Crop for this stage</SACL.PickCropForStage>
+  <SACL.PickCropForSeason>Crop for this season</SACL.PickCropForSeason>
+  <SACL.PickCropForFallback>Crop to sow once the store is full</SACL.PickCropForFallback>
+  <SACL.NoCropMatches>No crop matches that search.</SACL.NoCropMatches>
+  <SACL.TipGrowDays>Ripens in {0} days</SACL.TipGrowDays>
+  <SACL.FallowOptionDesc>Leave the field bare for a set number of days, to rest the soil.\n\nResting banks a fertility reserve on the field's cells, which the crops that follow spend by growing faster. The longer the fallow the bigger the reserve, up to a ceiling. The reserve empties more slowly than it filled, so the bonus is spread over several harvests.</SACL.FallowOptionDesc>
+  <SACL.FallowOptionDescBare>Leave the field bare for a set number of days before moving on to the next stage.\n\nThe soil rest module is switched off, so a fallow does nothing but wait. Switch that module on to have it enrich the soil.</SACL.FallowOptionDescBare>
+  <SACL.RandomOptionDesc>Draw a crop at random from those that tolerate the weather when this stage comes round. A fresh crop is drawn on every lap of the rotation.</SACL.RandomOptionDesc>
+
+  <SACL.SeasonalEnable>Follow a season schedule (all four seasons)</SACL.SeasonalEnable>
+  <SACL.SeasonalEnableDesc>This box governs the whole schedule for this field: ticking or clearing it from any tab applies to all four seasons. Each season's own instruction is set in its tab, below.</SACL.SeasonalEnableDesc>
+  <SACL.SeasonalDisabledHint>The season schedule is off: the same crop or rotation runs all year.</SACL.SeasonalDisabledHint>
+  <SACL.SeasonHeader>During {0}, this field should:</SACL.SeasonHeader>
+  <SACL.SeasonCurrent>Season in progress.</SACL.SeasonCurrent>
+  <SACL.SeasonTabTip>Set what this field should do during {0}.</SACL.SeasonTabTip>
+  <SACL.SeasonTabTipCurrent>Set what this field should do during {0}.\n\nThis is the season in progress, so this is the tab driving the field right now - which is what the coloured tab title marks.</SACL.SeasonTabTipCurrent>
+  <SACL.ModeInherit>Carry on as usual</SACL.ModeInherit>
+  <SACL.ModeInheritDesc>No special instruction: the rotation, or the zone's own crop, applies.</SACL.ModeInheritDesc>
+  <SACL.ModeFixed>Grow one fixed crop</SACL.ModeFixed>
+  <SACL.ModeFixedDesc>Ignore the rotation and sow a single crop for the whole season.</SACL.ModeFixedDesc>
+  <SACL.ModeRandom>Grow one crop drawn at random</SACL.ModeRandom>
+  <SACL.ModeRandomDesc>Draw a crop at random from those that tolerate this season's weather, and keep it for the whole season. A fresh crop is drawn when the season comes round the following year.</SACL.ModeRandomDesc>
+  <SACL.ModeRotation>Run the rotation</SACL.ModeRotation>
+  <SACL.ModeRotationDesc>Work through the rotation list during this season. With no usable rotation the field stays bare.</SACL.ModeRotationDesc>
+  <SACL.ModeFallow>Sow nothing</SACL.ModeFallow>
+  <SACL.ModeFallowDesc>Leave the field bare this season. Anything already growing is still harvested.</SACL.ModeFallowDesc>
+
+  <SACL.StockEnable>Watch colony stock</SACL.StockEnable>
+  <SACL.StockEnableDesc>Stop sowing, or fall back to another crop, once the colony has more than it needs.</SACL.StockEnableDesc>
+  <SACL.StockDisabledHint>Stock watching is off: this field sows regardless of how much is in the larder.</SACL.StockDisabledHint>
+  <SACL.StockNoYield>This field has no crop set, so there is no resource to watch yet.</SACL.StockNoYield>
+  <SACL.StockWatching>Watching {0}: {1} in store</SACL.StockWatching>
+  <SACL.StockHigh>Stop sowing above</SACL.StockHigh>
+  <SACL.StockLow>Resume sowing below</SACL.StockLow>
+  <SACL.StockHysteresisHint>Sowing stops at {0} and only starts again at {1}, which keeps the field from flip-flopping.</SACL.StockHysteresisHint>
+  <SACL.StockFallbackHeader>When the store is full, sow instead:</SACL.StockFallbackHeader>
+  <SACL.StockFallbackNone>Nothing - leave the field bare</SACL.StockFallbackNone>
+  <SACL.StockFallbackNoneDesc>Leave the field bare for as long as the store stays full. Nothing is sown, and whatever is already growing is still harvested.</SACL.StockFallbackNoneDesc>
+  <SACL.StockFallbackRandom>Random (a crop that suits the season)</SACL.StockFallbackRandom>
+  <SACL.StockFallbackRandomDesc>Roll a crop that can take the weather at the moment the store fills up, skipping the very one you have too much of. The roll is made again each time the store fills up.</SACL.StockFallbackRandomDesc>
+  <SACL.StockStateSowing>Below the threshold - sowing normally.</SACL.StockStateSowing>
+  <SACL.StockStateSuspended>Store is full - sowing suspended.</SACL.StockStateSuspended>
+
+  <!-- Buildings -->
+  <SACL.SkylightActive>Glazing active ({0})</SACL.SkylightActive>
+  <SACL.SkylightNoRoof>No roof above: build walls and roof over this cell.</SACL.SkylightNoRoof>
+  <SACL.NeedsRoomInterior>Must go inside a room, not on a {0}.</SACL.NeedsRoomInterior>
+  <SACL.VentAutoLabel>Automatic</SACL.VentAutoLabel>
+  <SACL.VentAutoDesc>Let the hatch open by itself whenever the room is warmer than its target.</SACL.VentAutoDesc>
+  <SACL.VentTargetDesc>Adjust the temperature the hatch aims for.</SACL.VentTargetDesc>
+  <SACL.VentTarget>Target: {0}</SACL.VentTarget>
+  <SACL.VentState>Hatch: {0}</SACL.VentState>
+  <SACL.VentOpen>open, venting heat</SACL.VentOpen>
+  <SACL.VentStandby>closed, room is cool enough</SACL.VentStandby>
+  <SACL.VentClosed>held shut</SACL.VentClosed>
+  <SACL.Degrees>°C</SACL.Degrees>
+
+  <SACL.CrateAutoExport>Ship when full</SACL.CrateAutoExport>
+  <SACL.CrateAutoExportDesc>Once the crate is full, drop its priority so haulers carry the whole batch off to a proper store.</SACL.CrateAutoExportDesc>
+  <SACL.CrateExportNow>Ship now</SACL.CrateExportNow>
+  <SACL.CrateExportNowDesc>Release the contents for hauling straight away, or hold them here.</SACL.CrateExportNowDesc>
+  <SACL.CrateHold>Hold contents</SACL.CrateHold>
+  <SACL.CrateResetFilter>Filter: crops only</SACL.CrateResetFilter>
+  <SACL.CrateResetFilterDesc>Allow exactly the harvest yields of the sowable plants present, modded ones included, and nothing else. Use this on a crate whose filter was cleared.</SACL.CrateResetFilterDesc>
+  <SACL.CrateResetFilterDone>Filter reset to crops: {0} yields allowed.</SACL.CrateResetFilterDone>
+  <SACL.CrateFill>Stacks: {0} of {1} ({2} items)</SACL.CrateFill>
+  <SACL.CrateStateFilling>filling up</SACL.CrateStateFilling>
+  <SACL.CrateStateFull>full</SACL.CrateStateFull>
+  <SACL.CrateStateExporting>waiting on haulers</SACL.CrateStateExporting>
+  <SACL.CratePriority>Storage priority: {0}</SACL.CratePriority>
+  <SACL.CratePriorityExporting>Storage priority: {0} (back to {1} once emptied)</SACL.CratePriorityExporting>
+
+</LanguageData>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ResearchProjectDef>
+    <defName>SACL_GreenhouseGlazing</defName>
+    <label>greenhouse glazing</label>
+    <description>Reinforced glass panels that can be fitted into a roof, plus the automated hatch mechanism used to bleed off excess heat. Lets an enclosed room trap the warmth of the day instead of tracking the outdoor temperature.</description>
+    <baseCost>1200</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>Electricity</li>
+    </prerequisites>
+    <researchViewX>5.00</researchViewX>
+    <researchViewY>3.60</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>SACL_FieldLogistics</defName>
+    <label>field logistics</label>
+    <description>Light crates that can be dragged out to the edge of a field so harvesters have somewhere to drop produce, instead of leaving it scattered across the soil to rot.</description>
+    <baseCost>500</baseCost>
+    <techLevel>Medieval</techLevel>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>1.20</researchViewY>
+  </ResearchProjectDef>
+
+</Defs>

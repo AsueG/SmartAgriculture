@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Paramètres du mod -->
+  <SACL.ModTitle>Smart Agriculture, Climate &amp; Colony Logistics</SACL.ModTitle>
+  <SACL.SettingsHint>Chaque module ci-dessous s'active ou se désactive à tout moment, en pleine partie, sans redémarrer. Un module désactivé ne fait strictement rien et ne laisse aucune trace dans la sauvegarde.</SACL.SettingsHint>
+  <SACL.AllModulesOff>Tous les modules de champ sont désactivés dans les paramètres du mod.</SACL.AllModulesOff>
+
+  <SACL.Module1>Module 1 - rotation des cultures à l'échelle du champ</SACL.Module1>
+  <SACL.Module1Desc>Une zone de culture suit une liste ordonnée de 2 à 4 plantes. Elle ne passe à la suivante que lorsque plus aucun plant de la culture en cours n'est debout : les cases moissonnées tôt restent nues au lieu de transformer le champ en damier. Une étape de jachère peut être insérée n'importe où dans la liste.</SACL.Module1Desc>
+  <SACL.DefaultFallowDays>Durée de jachère par défaut : {0} jours</SACL.DefaultFallowDays>
+
+  <SACL.Module2>Module 2 - culture pilotée par les stocks</SACL.Module2>
+  <SACL.Module2Desc>Chaque champ surveille le stock de la ressource qu'il produit. Au-dessus du seuil haut il bascule sur une culture secondaire, ou cesse de semer ; il reprend dès que le stock repasse sous le seuil bas. Le stock est lu dans le compteur que le jeu tient déjà à jour, jamais en balayant la carte.</SACL.Module2Desc>
+  <SACL.DefaultStockEnabled>Surveiller les stocks dès qu'un champ est configuré</SACL.DefaultStockEnabled>
+  <SACL.DefaultStockEnabledDesc>Un champ dont tu ouvres le plan pour la première fois arrive avec la surveillance des stocks déjà active. Décoche si tu préfères l'activer champ par champ.</SACL.DefaultStockEnabledDesc>
+  <SACL.DefaultStockHigh>Seuil haut par défaut : {0}</SACL.DefaultStockHigh>
+  <SACL.DefaultStockLow>Seuil bas par défaut : {0}</SACL.DefaultStockLow>
+
+  <SACL.Module3>Module 3 - planificateur saisonnier</SACL.Module3>
+  <SACL.Module3Desc>Une culture, une rotation, ou rien du tout, par saison du calendrier. Le champ bascule tout seul au fil des saisons.</SACL.Module3Desc>
+
+  <SACL.Module4>Module 4 - climat de serre</SACL.Module4>
+  <SACL.Module4Desc>Les pièces fermées couvertes de verre emmagasinent la chaleur du jour au lieu de suivre la température extérieure. Ajoute un cadre vitré et un aérateur de toit automatique qui évacue l'excès de chaleur.</SACL.Module4Desc>
+  <SACL.SolarGain>Gain solaire : {0} °C par case vitrée et par seconde</SACL.SolarGain>
+  <SACL.GreenhouseMaxDelta>Écart maximal au-dessus de l'extérieur : {0} °C</SACL.GreenhouseMaxDelta>
+  <SACL.HideFallbackSkylight>Masquer le cadre vitré intégré si un autre mod de puits de lumière est actif</SACL.HideFallbackSkylight>
+  <SACL.HideFallbackSkylightDesc>Laissez cette option active pour éviter deux bâtiments quasi identiques dans le menu de construction. Le comportement thermique s'applique de toute façon au toit de l'autre mod.</SACL.HideFallbackSkylightDesc>
+  <SACL.GreenhouseCompatStatus>Toits transparents détectés : {0}</SACL.GreenhouseCompatStatus>
+
+  <SACL.Module5>Module 5 - caisses de récolte</SACL.Module5>
+  <SACL.Module5Desc>Les moissonneurs déposent la récolte directement dans une caisse en bord de champ au lieu de l'éparpiller sur la terre. Dès qu'une caisse est pleine, ou que son champ est entièrement moissonné, tout le lot part en un seul voyage.</SACL.Module5Desc>
+  <SACL.CrateRadius>Rayon de recherche des caisses : {0} cases</SACL.CrateRadius>
+
+  <SACL.Module6>Module 6 - priorités selon la météo</SACL.Module6>
+  <SACL.Module6Desc>Tant que l'extérieur est mortel - canicule, vague de froid, retombées toxiques et compagnie - les types de travail extérieurs sont mis de côté pour que les colons se rabattent sur des tâches à l'intérieur.</SACL.Module6Desc>
+  <SACL.HazardHeat>Seuil de chaleur : {0} °C</SACL.HazardHeat>
+  <SACL.HazardCold>Seuil de froid : {0} °C</SACL.HazardCold>
+  <SACL.HazardGrowing>Mettre l'Agriculture de côté (met aussi la serre en pause)</SACL.HazardGrowing>
+  <SACL.HazardPlantCutting>Mettre la Coupe de plantes de côté</SACL.HazardPlantCutting>
+  <SACL.HazardMining>Mettre le Minage de côté</SACL.HazardMining>
+  <SACL.HazardReasonHeat>chaleur mortelle ({0})</SACL.HazardReasonHeat>
+  <SACL.HazardReasonCold>froid mortel ({0})</SACL.HazardReasonCold>
+
+  <SACL.Module7>Module 7 - garde-manger d'abord</SACL.Module7>
+  <SACL.Module7Desc>Les cuisiniers attrapent les ingrédients les plus proches de la péremption plutôt que les plus proches d'eux, pour que la nourriture soit mangée avant de pourrir.</SACL.Module7Desc>
+  <SACL.PantryCookingOnly>Recettes de cuisine uniquement</SACL.PantryCookingOnly>
+  <SACL.PantryCookingOnlyDesc>Laissez actif pour limiter le changement à la cuisine. Désactivez pour appliquer le même ordre à toute facture utilisant des ingrédients périssables.</SACL.PantryCookingOnlyDesc>
+  <SACL.PantryHorizon>Ne réordonner que ce qui pourrit sous {0} jours</SACL.PantryHorizon>
+
+  <SACL.Module8>Module 8 - repos du sol</SACL.Module8>
+  <SACL.Module8Desc>Une étape de jachère cesse d'être du temps perdu : elle accumule une réserve de fertilité sur les cases du champ, que les cultures suivantes dépensent en poussant plus vite. La réserve ne fait que s'ajouter à la fertilité du terrain, jamais s'en retirer : un champ ne peut donc jamais devenir incultivable, et ignorer la jachère ne coûte rien de plus qu'aujourd'hui.</SACL.Module8Desc>
+  <SACL.SoilRestCap>Réserve maximale : +{0} de fertilité</SACL.SoilRestCap>
+  <SACL.SoilRestPerDay>Accumulation : {0} de fertilité par jour de repos</SACL.SoilRestPerDay>
+  <SACL.SoilRestDrain>Consommation : {0} de fertilité par jour de croissance</SACL.SoilRestDrain>
+  <SACL.SoilRestHint>À ces rythmes, une réserve pleine demande {0} jours de jachère et alimente ensuite {1} jours de croissance enrichie. La consommation est volontairement plus lente que l'accumulation : la fertilité ne joue que sur la vitesse de pousse, donc étaler le bonus sur plusieurs récoltes est le seul moyen que le repos soit rentable.</SACL.SoilRestHint>
+
+  <!-- Fenêtre du plan de champ -->
+  <SACL.FieldPlanGizmo>Plan du champ</SACL.FieldPlanGizmo>
+  <SACL.FieldPlanGizmoDesc>Configurer la rotation des cultures, le calendrier saisonnier et les seuils de stock de ce champ.</SACL.FieldPlanGizmoDesc>
+  <SACL.FieldPlanGizmoDescActive>Configurer la rotation des cultures, le calendrier saisonnier et les seuils de stock de ce champ.\n\nActuellement : {0}</SACL.FieldPlanGizmoDescActive>
+  <SACL.FieldPlanTitle>Plan du champ : {0}</SACL.FieldPlanTitle>
+  <SACL.TabRotation>Rotation</SACL.TabRotation>
+  <SACL.TabStock>Stocks</SACL.TabStock>
+
+  <SACL.RotationEnable>Appliquer une rotation sur ce champ</SACL.RotationEnable>
+  <SACL.RotationEnableDesc>Le champ parcourt la liste ci-dessous dans l'ordre. Il ne passe à l'étape suivante que lorsque tous les plants de l'étape en cours ont été récoltés ou coupés.</SACL.RotationEnableDesc>
+  <SACL.RotationDisabledHint>Rotation inactive : ce champ sème la culture définie sur la zone elle-même.</SACL.RotationDisabledHint>
+  <SACL.RotationStagesHeader>Étapes ({0} sur {1})</SACL.RotationStagesHeader>
+  <SACL.RotationAddStage>Ajouter une étape</SACL.RotationAddStage>
+  <SACL.RotationRestart>Repartir de la première étape</SACL.RotationRestart>
+  <SACL.RotationNeedsTwo>Une rotation a besoin d'au moins deux étapes pour servir à quelque chose.</SACL.RotationNeedsTwo>
+  <SACL.RotationEmpty>aucune étape définie</SACL.RotationEmpty>
+  <SACL.PhaseSowing>semis de {0}</SACL.PhaseSowing>
+  <SACL.PhaseRipening>en attente de {0} - {1} plants encore debout</SACL.PhaseRipening>
+  <SACL.PhaseFallow>jachère encore {0} jours</SACL.PhaseFallow>
+  <SACL.PhaseRandomWaiting>en attente d'un temps supportable par une culture aléatoire</SACL.PhaseRandomWaiting>
+  <SACL.FallowOption>Jachère (laisser reposer la terre)</SACL.FallowOption>
+  <SACL.FallowStage>Jachère, {0} jours</SACL.FallowStage>
+  <SACL.RandomOption>Aléatoire (une culture adaptée à la saison)</SACL.RandomOption>
+  <SACL.RandomStage>Culture aléatoire</SACL.RandomStage>
+  <SACL.RandomStageRolled>Aléatoire : {0}</SACL.RandomStageRolled>
+  <SACL.Days>Jours</SACL.Days>
+  <SACL.DaysDesc>Nombre de jours pendant lesquels le champ reste nu.\n\nCe repos n'est pas du temps perdu : chaque jour accumule de la fertilité sur la terre, et les cultures suivantes dépensent cette réserve en poussant plus vite. 3 jours donnent un petit coup de pouce, une jachère pleine amène la terre au niveau d'une terre riche. Les jours au-delà de la réserve maximale ne servent à rien.</SACL.DaysDesc>
+  <SACL.DaysDescBare>Nombre de jours pendant lesquels le champ reste nu avant de passer à l'étape suivante.\n\nLe module « repos du sol » est désactivé : la durée n'a donc pour seul effet que de retarder l'étape suivante. Active ce module pour que la jachère enrichisse vraiment la terre.</SACL.DaysDescBare>
+  <SACL.FallowAuto>auto</SACL.FallowAuto>
+  <SACL.FallowAutoDesc>Laisser la durée se calculer toute seule : juste assez de jours pour remplir la réserve de fertilité du champ, en tenant compte de ce qu'il en reste déjà. Elle est recalculée à chaque fois que l'étape revient.\n\nDécoche pour saisir toi-même le nombre de jours. Si le module « repos du sol » est désactivé, le calcul se rabat sur la durée par défaut des réglages.</SACL.FallowAutoDesc>
+  <SACL.SoilReserve>Réserve du sol : +{0} de fertilité sur +{1} ({2})</SACL.SoilReserve>
+  <SACL.SoilReserveDesc>Ce que les jachères de ce champ ont mis de côté, en moyenne sur ses cases.\n\nCette réserve s'ajoute à la fertilité du terrain et fait pousser les cultures plus vite, puis se vide au fil de leur croissance. Réglages dans le module « repos du sol ».</SACL.SoilReserveDesc>
+  <SACL.NoCrop>aucune culture</SACL.NoCrop>
+  <SACL.NoYield>rien</SACL.NoYield>
+  <SACL.Yields>produit {0}</SACL.Yields>
+  <SACL.PickCrop>Choisir une culture...</SACL.PickCrop>
+  <SACL.NoSowablePlants>Rien ne peut être semé sur ce champ pour le moment.</SACL.NoSowablePlants>
+
+  <!-- Sélecteur de culture -->
+  <SACL.PickCropForStage>Culture de cette étape</SACL.PickCropForStage>
+  <SACL.PickCropForSeason>Culture de cette saison</SACL.PickCropForSeason>
+  <SACL.PickCropForFallback>Culture de repli quand la réserve est pleine</SACL.PickCropForFallback>
+  <SACL.NoCropMatches>Aucune culture ne correspond à cette recherche.</SACL.NoCropMatches>
+  <SACL.TipGrowDays>Maturité en {0} jours</SACL.TipGrowDays>
+  <SACL.FallowOptionDesc>Laisser le champ nu pendant un nombre de jours donné, pour faire reposer la terre.\n\nLe repos accumule une réserve de fertilité sur les cases du champ, que les cultures suivantes dépensent en poussant plus vite. Plus la jachère est longue, plus la réserve est grande, jusqu'à un plafond. La réserve se vide plus lentement qu'elle ne s'est remplie, donc le bonus s'étale sur plusieurs récoltes.</SACL.FallowOptionDesc>
+  <SACL.FallowOptionDescBare>Laisser le champ nu pendant un nombre de jours donné avant de passer à l'étape suivante.\n\nLe module « repos du sol » est désactivé : la jachère ne fait donc qu'attendre. Active ce module pour qu'elle enrichisse la terre.</SACL.FallowOptionDescBare>
+  <SACL.RandomOptionDesc>Tirer une culture au hasard parmi celles qui supportent le temps qu'il fera quand cette étape arrivera. Le tirage est refait à chaque tour de rotation.</SACL.RandomOptionDesc>
+
+  <SACL.SeasonalEnable>Suivre un calendrier saisonnier (les quatre saisons)</SACL.SeasonalEnable>
+  <SACL.SeasonalEnableDesc>Cette case commande le calendrier entier de ce champ : la cocher ou la décocher depuis n'importe quel onglet vaut pour les quatre saisons. La consigne propre à une saison se règle dans son onglet, en dessous.</SACL.SeasonalEnableDesc>
+  <SACL.SeasonalDisabledHint>Calendrier saisonnier inactif : la même culture ou rotation tourne toute l'année.</SACL.SeasonalDisabledHint>
+  <SACL.SeasonHeader>Pendant {0}, ce champ doit :</SACL.SeasonHeader>
+  <SACL.SeasonCurrent>Saison en cours.</SACL.SeasonCurrent>
+  <SACL.SeasonTabTip>Régler ce que ce champ doit faire pendant {0}.</SACL.SeasonTabTip>
+  <SACL.SeasonTabTipCurrent>Régler ce que ce champ doit faire pendant {0}.\n\nC'est la saison en cours : c'est donc cet onglet qui pilote le champ en ce moment, ce que rappelle la couleur de son titre.</SACL.SeasonTabTipCurrent>
+  <SACL.ModeInherit>Continuer normalement</SACL.ModeInherit>
+  <SACL.ModeInheritDesc>Aucune consigne particulière : la rotation, ou la culture de la zone, s'applique.</SACL.ModeInheritDesc>
+  <SACL.ModeFixed>Cultiver une seule plante</SACL.ModeFixed>
+  <SACL.ModeFixedDesc>Ignorer la rotation et semer une culture unique toute la saison.</SACL.ModeFixedDesc>
+  <SACL.ModeRandom>Cultiver une plante tirée au hasard</SACL.ModeRandom>
+  <SACL.ModeRandomDesc>Tirer une culture au hasard parmi celles qui supportent le temps de cette saison, et la garder toute la saison. Un nouveau tirage a lieu quand la saison revient l'année suivante.</SACL.ModeRandomDesc>
+  <SACL.ModeRotation>Appliquer la rotation</SACL.ModeRotation>
+  <SACL.ModeRotationDesc>Parcourir la liste de rotation pendant cette saison. Sans rotation utilisable, le champ reste nu.</SACL.ModeRotationDesc>
+  <SACL.ModeFallow>Ne rien semer</SACL.ModeFallow>
+  <SACL.ModeFallowDesc>Laisser le champ nu cette saison. Ce qui pousse déjà est tout de même récolté.</SACL.ModeFallowDesc>
+
+  <SACL.StockEnable>Surveiller les stocks de la colonie</SACL.StockEnable>
+  <SACL.StockEnableDesc>Cesser de semer, ou se rabattre sur une autre culture, dès que la colonie en a plus que nécessaire.</SACL.StockEnableDesc>
+  <SACL.StockDisabledHint>Surveillance des stocks inactive : ce champ sème sans tenir compte du garde-manger.</SACL.StockDisabledHint>
+  <SACL.StockNoYield>Ce champ n'a aucune culture définie, il n'y a donc pas encore de ressource à surveiller.</SACL.StockNoYield>
+  <SACL.StockWatching>Surveille {0} : {1} en réserve</SACL.StockWatching>
+  <SACL.StockHigh>Arrêter les semis au-dessus de</SACL.StockHigh>
+  <SACL.StockLow>Reprendre les semis en dessous de</SACL.StockLow>
+  <SACL.StockHysteresisHint>Les semis s'arrêtent à {0} et ne reprennent qu'à {1}, ce qui évite que le champ hésite en permanence.</SACL.StockHysteresisHint>
+  <SACL.StockFallbackHeader>Quand la réserve est pleine, semer à la place :</SACL.StockFallbackHeader>
+  <SACL.StockFallbackNone>Rien - laisser le champ nu</SACL.StockFallbackNone>
+  <SACL.StockFallbackNoneDesc>Laisser le champ nu tant que la réserve reste pleine. Rien n'est semé, et ce qui pousse déjà est tout de même récolté.</SACL.StockFallbackNoneDesc>
+  <SACL.StockFallbackRandom>Aléatoire (une culture adaptée à la saison)</SACL.StockFallbackRandom>
+  <SACL.StockFallbackRandomDesc>Tirer une culture au hasard parmi celles qui supportent le temps qu'il fait quand la réserve se remplit, en écartant celle dont tu as justement trop. Le tirage est refait à chaque fois que la réserve se remplit de nouveau.</SACL.StockFallbackRandomDesc>
+  <SACL.StockStateSowing>Sous le seuil - semis normaux.</SACL.StockStateSowing>
+  <SACL.StockStateSuspended>Réserve pleine - semis suspendus.</SACL.StockStateSuspended>
+
+  <!-- Bâtiments -->
+  <SACL.SkylightActive>Vitrage actif ({0})</SACL.SkylightActive>
+  <SACL.SkylightNoRoof>Aucun toit au-dessus : construis des murs et un toit sur cette case.</SACL.SkylightNoRoof>
+  <SACL.NeedsRoomInterior>Doit être placé à l'intérieur d'une pièce, pas sur un élément de type « {0} ».</SACL.NeedsRoomInterior>
+  <SACL.VentAutoLabel>Automatique</SACL.VentAutoLabel>
+  <SACL.VentAutoDesc>Laisser la trappe s'ouvrir d'elle-même dès que la pièce dépasse sa consigne.</SACL.VentAutoDesc>
+  <SACL.VentTargetDesc>Régler la température visée par la trappe.</SACL.VentTargetDesc>
+  <SACL.VentTarget>Consigne : {0}</SACL.VentTarget>
+  <SACL.VentState>Trappe : {0}</SACL.VentState>
+  <SACL.VentOpen>ouverte, évacuation de chaleur</SACL.VentOpen>
+  <SACL.VentStandby>fermée, la pièce est assez fraîche</SACL.VentStandby>
+  <SACL.VentClosed>maintenue fermée</SACL.VentClosed>
+  <SACL.Degrees>°C</SACL.Degrees>
+
+  <SACL.CrateAutoExport>Expédier une fois pleine</SACL.CrateAutoExport>
+  <SACL.CrateAutoExportDesc>Dès que la caisse est pleine, baisser sa priorité pour que les porteurs emmènent tout le lot vers un vrai stockage.</SACL.CrateAutoExportDesc>
+  <SACL.CrateExportNow>Expédier maintenant</SACL.CrateExportNow>
+  <SACL.CrateExportNowDesc>Libérer le contenu pour le transport tout de suite, ou le garder ici.</SACL.CrateExportNowDesc>
+  <SACL.CrateHold>Garder le contenu</SACL.CrateHold>
+  <SACL.CrateResetFilter>Filtre : cultures seules</SACL.CrateResetFilter>
+  <SACL.CrateResetFilterDesc>Réautoriser exactement les récoltes des plantes semables présentes (celles des autres mods comprises) et rien d'autre. À utiliser sur une caisse dont le filtre a été vidé.</SACL.CrateResetFilterDesc>
+  <SACL.CrateResetFilterDone>Filtre remis sur les cultures : {0} récoltes autorisées.</SACL.CrateResetFilterDone>
+  <SACL.CrateFill>Piles : {0} sur {1} ({2} objets)</SACL.CrateFill>
+  <SACL.CrateStateFilling>en cours de remplissage</SACL.CrateStateFilling>
+  <SACL.CrateStateFull>pleine</SACL.CrateStateFull>
+  <SACL.CrateStateExporting>en attente des porteurs</SACL.CrateStateExporting>
+  <SACL.CratePriority>Priorité de stockage : {0}</SACL.CratePriority>
+  <SACL.CratePriorityExporting>Priorité de stockage : {0} (repassera à {1} une fois vidée)</SACL.CratePriorityExporting>
+
+</LanguageData>

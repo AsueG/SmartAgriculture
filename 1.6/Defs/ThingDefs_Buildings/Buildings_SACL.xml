@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!--============================ Module 4: greenhouse ============================-->
+
+  <!-- Fallback glazing. ModCompat hides this from the architect menu when a third party
+       skylight mod is installed, so the two never compete. -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>SACL_Skylight</defName>
+    <label>glazing frame</label>
+    <description>A reinforced glass panel fitted into the roof above it. The frame turns that roof tile into a glass roof, letting the warmth of the day build up inside an enclosed room instead of leaking away.\n\nIt needs a roof to be there already - it replaces a roof tile, it never builds one, and it holds nothing up. The walls that were carrying the roof carry the glass just the same.\n\nRemoving the frame puts the original roof back.</description>
+    <thingClass>SmartAgriculture.Building_Skylight</thingClass>
+    <graphicData>
+      <texPath>Things/Building/SACL/Skylight</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <passability>Standable</passability>
+    <!-- Must stay under 0.01: ThingDef.BlocksPlanting refuses any cell holding a thing whose Fillage
+         is above None, so the slightest fill percentage made it impossible to sow under the glazing -
+         which is the one place a greenhouse needs crops. A pane of glass gives no cover anyway. -->
+    <fillPercent>0</fillPercent>
+    <pathCost>10</pathCost>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <useHitPoints>true</useHitPoints>
+    <!-- Ticks so the frame can glaze the cell later: it is usually built before the colonists have
+         finished roofing over it, and it deliberately refuses to roof a bare cell itself. -->
+    <tickerType>Rare</tickerType>
+    <!-- No holdsRoof: RoofCollapseUtility only ever reads it off GetEdifice, and this frame is
+         deliberately not an edifice so it can sit on a walkable cell. Declaring it tripped
+         "holds roof but is not an edifice" for no gain. The walls that were already holding the roof
+         up keep holding it: the frame swaps the roof tile, it never adds or removes support. -->
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <WorkToBuild>900</WorkToBuild>
+      <Flammability>0.2</Flammability>
+      <Beauty>1</Beauty>
+    </statBases>
+    <costList>
+      <Steel>15</Steel>
+    </costList>
+    <building>
+      <isEdifice>false</isEdifice>
+      <ai_chillDestination>false</ai_chillDestination>
+    </building>
+    <placeWorkers>
+      <li>SmartAgriculture.PlaceWorker_RoomInterior</li>
+    </placeWorkers>
+    <designationCategory>Temperature</designationCategory>
+    <!-- Without a draw style category DesignatorManager places one cell per click and never starts a
+         drag, which is unusable for glazing a whole roof. Default2D is what floors use: rectangle,
+         outline, oval and line. -->
+    <drawStyleCategory>Default2D</drawStyleCategory>
+    <researchPrerequisites>
+      <li>SACL_GreenhouseGlazing</li>
+    </researchPrerequisites>
+    <uiOrder>2100</uiOrder>
+  </ThingDef>
+
+  <!-- Automated hatch. Purely passive: it can never cool a room below the outdoor temperature. -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>SACL_RoofVent</defName>
+    <label>automated roof vent</label>
+    <description>A spring-loaded hatch in the ceiling. Once the room climbs past its target temperature the hatch opens on its own and lets the excess heat out.\n\nIt needs no power, but it can only bleed heat towards the outdoor temperature - it will never cool a room below what it is like outside.</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Building/SACL/RoofVent</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <passability>Standable</passability>
+    <!-- Same reason as the glazing frame: anything above 0 fill blocks sowing on the cell. -->
+    <fillPercent>0</fillPercent>
+    <pathCost>10</pathCost>
+    <size>(1,1)</size>
+    <!-- A hatch in the ceiling has no meaningful facing, and Graphic_Single would draw the same
+         texture in all four rotations anyway. -->
+    <rotatable>false</rotatable>
+    <tickerType>Rare</tickerType>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <WorkToBuild>600</WorkToBuild>
+      <Flammability>0.5</Flammability>
+    </statBases>
+    <costList>
+      <Steel>25</Steel>
+    </costList>
+    <building>
+      <isEdifice>false</isEdifice>
+      <ai_chillDestination>false</ai_chillDestination>
+    </building>
+    <comps>
+      <li Class="SmartAgriculture.CompProperties_RoofVent">
+        <ventDegreesPerSecond>0.35</ventDegreesPerSecond>
+        <defaultTargetTemperature>26</defaultTargetTemperature>
+      </li>
+      <li Class="CompProperties_Flickable" />
+    </comps>
+    <placeWorkers>
+      <li>SmartAgriculture.PlaceWorker_RoomInterior</li>
+    </placeWorkers>
+    <designationCategory>Temperature</designationCategory>
+    <researchPrerequisites>
+      <li>SACL_GreenhouseGlazing</li>
+    </researchPrerequisites>
+    <uiOrder>2101</uiOrder>
+  </ThingDef>
+
+  <!--============================ Module 5: field crate ============================-->
+
+  <!-- A plain Building_Storage subclass, so vanilla hauling, storage groups, the storage tab and
+       Pick Up And Haul all keep working with no special casing. -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>SACL_FieldCrate</defName>
+    <label>field crate</label>
+    <description>A light slatted crate meant to be dragged out to the edge of a field. Harvesters drop their load straight into it instead of scattering produce across the soil.\n\nWhile it fills up it keeps a high storage priority so haulers leave it alone. Once it is full - or once the field it serves has been completely harvested - it drops to a low priority, which is what makes haulers carry the whole batch off to a cold room in one trip.\n\nIt only ever accepts what fields actually produce - crops from other mods included - so haulers can never fill it with wood, steel or weapons. Its storage tab narrows that down further, crop by crop.</description>
+    <thingClass>SmartAgriculture.Building_FieldCrate</thingClass>
+    <graphicData>
+      <texPath>Things/Building/SACL/FieldCrate</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.45</fillPercent>
+    <pathCost>40</pathCost>
+    <size>(1,1)</size>
+    <rotatable>false</rotatable>
+    <tickerType>Rare</tickerType>
+    <surfaceType>Item</surfaceType>
+    <canOverlapZones>false</canOverlapZones>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsFurniture</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>90</MaxHitPoints>
+      <Mass>6</Mass>
+      <WorkToBuild>320</WorkToBuild>
+      <Flammability>1.0</Flammability>
+      <Beauty>-2</Beauty>
+    </statBases>
+    <!-- Any woody stuff rather than a fixed WoodLog cost: the game resolves the category itself, so
+         woods added by other mods qualify with no patch and no reference to them. -->
+    <stuffCategories>
+      <li>Woody</li>
+    </stuffCategories>
+    <costStuffCount>35</costStuffCount>
+    <building>
+      <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
+      <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+      <maxItemsInCell>3</maxItemsInCell>
+      <blueprintClass>Blueprint_Storage</blueprintClass>
+      <storageGroupTag>SACL_FieldCrate</storageGroupTag>
+      <ai_chillDestination>false</ai_chillDestination>
+      <!-- Both filters are left empty here and pinned by FieldCrateDefaults at startup to exactly the
+           harvest yields of the sowable plants present, modded crops included. No category can be
+           named instead: every one wide enough to cover them all also covers wood and metals, which
+           made haulers fill the crate with the woodpile.
+           The fixed one is what keeps weapons, apparel and the rest out of the storage tab entirely,
+           and out of the crate even on saves that predate this. -->
+      <fixedStorageSettings>
+        <filter>
+          <disallowNotEverStorable>true</disallowNotEverStorable>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <priority>Preferred</priority>
+      </defaultStorageSettings>
+    </building>
+    <inspectorTabs>
+      <li>ITab_Storage</li>
+      <li>SmartAgriculture.ITab_FieldCrateContents</li>
+    </inspectorTabs>
+    <designationCategory>Furniture</designationCategory>
+    <researchPrerequisites>
+      <li>SACL_FieldLogistics</li>
+    </researchPrerequisites>
+    <uiOrder>2060</uiOrder>
+  </ThingDef>
+
+</Defs>

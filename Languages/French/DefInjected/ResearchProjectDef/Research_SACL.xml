@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <SACL_GreenhouseGlazing.label>vitrage de serre</SACL_GreenhouseGlazing.label>
+  <SACL_GreenhouseGlazing.description>Des panneaux de verre renforcé qui s'encastrent dans un toit, ainsi que le mécanisme de trappe automatique servant à évacuer l'excès de chaleur. Permet à une pièce fermée de retenir la chaleur du jour au lieu de suivre la température extérieure.</SACL_GreenhouseGlazing.description>
+
+  <SACL_FieldLogistics.label>logistique de champ</SACL_FieldLogistics.label>
+  <SACL_FieldLogistics.description>Des caisses légères que l'on peut traîner en bord de champ pour donner aux moissonneurs un endroit où déposer la récolte, au lieu de la laisser éparpillée sur la terre à pourrir.</SACL_FieldLogistics.description>
+
+</LanguageData>
