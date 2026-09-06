@@ -4,6 +4,8 @@ A RimWorld 1.6 mod: eight independent farming, climate and logistics modules. Ev
 switched on or off from the mod settings at any time, mid-game, without restarting — and a module that
 is off does nothing at all.
 
+Available on the [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3797110254).
+
 Most of it is configured from one place: select a grow zone and click the new button on its gizmo bar.
 
 ## Modules

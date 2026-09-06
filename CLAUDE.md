@@ -13,6 +13,15 @@ managed folder with `-p:RimWorldManaged="…\RimWorldWin64_Data\Managed"` if the
 `About/About.xml` carries `<modVersion>`, which the game only ever displays — nothing parses it. Bump it
 on release; leaving it out is what makes the mod list read "unknown".
 
+`About/PublishedFileId.txt` is the Workshop item id and is committed on purpose: without it an upload
+publishes a *second* item instead of updating the existing one. It is not a secret — the same number is
+in the public Workshop URL — and only the owning Steam account can push an update.
+
+The Workshop description is capped at **8000 characters** by `SteamUGC.SetItemDescription`, and RimWorld
+passes `<description>` through untruncated, so going over fails the upload with a bare
+`OnItemSubmitted failure. Result: InvalidParam`. The description is also read at process start, so an
+edit needs a game restart before the upload will pick it up.
+
 `1.6/Assemblies/SmartAgriculture.dll` is committed on purpose — a GitHub download has to be playable
 without a build step. Commit it with the source change that produced it.
 
