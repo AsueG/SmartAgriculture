@@ -63,11 +63,11 @@ What this does: ingredients are ordered by how long they have left before rottin
 
 8. SOIL REST
 The problem: leaving a field fallow is what real farmers do, but in RimWorld it buys you absolutely nothing. A fallow step is pure waiting.
-What this does: resting a field banks a fertility reserve in its soil, and the crops that follow spend that reserve by growing faster. The reserve fills to a ceiling worth about as much as rich soil, and empties more slowly than it filled, so one fallow break is spread over several harvests. The reserve is only ever added on top of the terrain's own fertility, never subtracted, so a field can never end up unfarmable and a player who ignores fallow loses nothing. The field plan window shows what each field has banked, and a fallow step can work its own length out - just enough days to fill the reserve - or you can type the number yourself.
+What this does: resting a field banks a fertility reserve in its soil, and the crops that follow spend that reserve by growing faster. The reserve fills to a ceiling worth about as much as rich soil, and empties more slowly than it filled, so one fallow break is spread over several harvests. The reserve is only ever added on top of the terrain's own fertility, never subtracted, so a field can never end up unfarmable. The field plan window shows what each field has banked, and a fallow step can work its own length out - just enough days to fill the reserve - or you can type the number yourself.
 
 ADDING THIS MOD TO A GAME IN PROGRESS
 
-Yes, and nothing needs to be reset. Load an existing save with the mod enabled and it simply starts working: the store it keeps for your fields is created empty on load, every field starts with no plan and behaves exactly as it did before, and you enable what you want field by field. The new buildings appear in the build menu straight away. The eight module switches also take effect immediately, mid-game, so you can try one module and turn it off again without ever restarting.
+Yes, and nothing needs to be reset. Load an existing save with the mod enabled and it simply starts working: every field starts with no plan and behaves exactly as it did before, and you enable what you want field by field. The new buildings appear in the build menu straight away. The eight module switches also take effect immediately, mid-game, so you can try one module and turn it off again without ever restarting.
 
 Removing it later is just as safe. The save still loads; you lose the field plans and any banked soil reserve, and the zones fall back to the crop set on the zone itself. Deconstruct the glazed roof, the roof vent and the crates first, otherwise those tiles come back as plain rubble.
 
@@ -79,18 +79,13 @@ Checked against the popular mods that touch the same vanilla methods:
 
 - Smart Farming: compatible, and the two do different jobs. It never gets in the way of rotation, because this mod decides what to sow without ever rewriting the crop set on the zone. Both mods add their own button to a grow zone, so you get both.
 - Vanilla Plants Expanded and its submodules, VGP, Medieval Overhaul: compatible. Their crops show up in the crop pickers on their own. One small caveat: extra harvest yields that another mod spawns itself land on the ground rather than in a harvest crate.
-- Vanilla Expanded Framework: compatible on all five shared methods. Its ingredient handling works on mixed-ingredient recipes, which module 7 deliberately leaves alone.
-- Common Sense: compatible. Same reason - it sorts the mixed-ingredient path, module 7 sorts the normal cooking path.
+- Vanilla Expanded Framework, Common Sense: compatible. Both sort mixed-ingredient recipes, which module 7 deliberately leaves alone.
 - Hospitality, Hospital: compatible. Their work-priority changes and module 6 stack, and dangerous weather still wins.
 - LWM's Deep Storage, Adaptive Storage Framework, Pick Up And Haul: compatible. A harvest crate is an ordinary storage building, so whatever those mods add to storage applies to it too.
 - Dubs Skylights and other skylight mods: better than compatible. Their roof is detected and given the greenhouse thermal model, and this mod's own glazing frame hides itself so you never see two of everything.
 - Keyz' Allow Utilities, Progression: Education, Nice Bill Tab: compatible, no overlap.
 
 No load order requirements beyond Harmony. If you ever want to check what was detected, the startup log carries a line beginning with [SACL].
-
-SAVES
-
-No vanilla class is replaced, and no vanilla behaviour is skipped or rewritten. Nothing is bolted onto the grow zones themselves either: everything this mod remembers about your fields lives in its own map component, keyed by zone ID, which is why the save still loads once you remove the mod.
 
 SOURCE
 
