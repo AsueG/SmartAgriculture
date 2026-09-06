@@ -8,69 +8,64 @@ Tout se règle au même endroit : [b]sélectionnez une zone de culture et clique
 [h1]Les modules[/h1]
 
 [h2]1. Rotation à l'échelle du champ[/h2]
-[b]Le problème :[/b] vous changez la culture d'une zone, et comme vos colons récoltent case par case, le champ devient un damier de riz à moitié poussé collé à du maïs mûr. Plus rien n'arrive à maturité en même temps.
-[b]Ce que ça fait :[/b] la zone suit une liste ordonnée de 2 à 4 cultures, et ne passe à la suivante que lorsque le dernier plant de la culture en cours a disparu. Les cases récoltées tôt restent simplement nues et attendent le reste du champ. Une belle passe propre par culture au lieu d'un désordre permanent.
-Deux autres types d'étape existent : une [b]jachère[/b], qui fait reposer la terre et se paie en croissance plus tard (module 8), et [b]aléatoire[/b], qui tire une culture capable de survivre — et idéalement de mûrir — dans le temps qu'il fait au moment où l'étape arrive.
+[b]Le problème :[/b] vous changez la culture d'une zone, et comme vos colons récoltent case par case, le champ devient un damier de riz à moitié poussé collé à du maïs mûr.
+[b]Ce que ça fait :[/b] la zone suit une liste ordonnée de 2 à 4 cultures, et ne passe à la suivante que lorsque le dernier plant de la culture en cours a disparu. Les cases récoltées tôt restent nues et attendent le reste du champ. Une passe propre par culture au lieu d'un désordre permanent.
+Deux autres types d'étape existent : la [b]jachère[/b], qui fait reposer la terre et se paie en croissance plus tard (module 8), et [b]aléatoire[/b], qui tire une culture capable de survivre — et idéalement de mûrir — dans le temps qu'il fait à ce moment-là.
 
 [h2]2. Culture pilotée par les stocks[/h2]
 [b]Le problème :[/b] vous avez 4000 riz en réserve et vos fermiers continuent de planter du riz.
-[b]Ce que ça fait :[/b] chaque champ surveille la quantité de sa propre production détenue par la colonie. Au-dessus du seuil haut, il bascule sur une culture que vous désignez, ou cesse de semer. En repassant sous le seuil bas, il reprend. Deux seuils distincts évitent qu'il hésite toutes les deux heures. Il lit le compteur de stock que le jeu tient déjà à jour : coût nul en performances.
+[b]Ce que ça fait :[/b] chaque champ surveille la quantité de sa propre production détenue par la colonie. Au-dessus du seuil haut, il bascule sur une culture que vous désignez, ou cesse de semer. En repassant sous le seuil bas, il reprend. Deux seuils distincts évitent qu'il hésite toutes les deux heures.
 
 [h2]3. Planificateur saisonnier[/h2]
-[b]Le problème :[/b] la culture qui a du sens au printemps est la mauvaise en automne, et penser à la changer à la main est une corvée.
+[b]Le problème :[/b] la culture qui a du sens au printemps est la mauvaise en automne, et y penser à la main est une corvée.
 [b]Ce que ça fait :[/b] un onglet par saison. Donnez à chaque saison une culture fixe, confiez-la à la rotation, ou laissez-la en jachère. Le basculement se fait tout seul au fil du calendrier.
 
 [h2]4. Vrai climat de serre[/h2]
 [b]Le problème :[/b] une pièce couverte de verre se comporte exactement comme une pièce couverte de pierre. Le soleil n'a aucun effet sur la température.
-[b]Ce que ça fait :[/b] une pièce fermée sous toit transparent se réchauffe au fil de la journée proportionnellement à la lumière réelle, au lieu de suivre bêtement la température extérieure. Ajoute un cadre vitré pour construire ce toit, et un aérateur de toit automatique qui s'ouvre pour évacuer la chaleur dès que la pièce dépasse la consigne que vous fixez. Des cultures d'hiver gratuites si vous construisez bien — et un vrai risque de cuire vos récoltes en été sinon.
-Vous utilisez déjà un mod de puits de lumière ? Son toit est détecté et reçoit le même comportement thermique, et le cadre intégré à ce mod se masque : vous n'avez jamais deux bâtiments en double.
+[b]Ce que ça fait :[/b] une pièce fermée sous toit transparent se réchauffe au fil de la journée proportionnellement à la lumière réelle, au lieu de suivre bêtement la température extérieure. Ajoute un cadre vitré pour construire ce toit, et un aérateur automatique qui s'ouvre pour évacuer la chaleur dès que la pièce dépasse la consigne. Des cultures d'hiver gratuites si vous construisez bien — et un vrai risque de cuire vos récoltes en été sinon.
 
 [h2]5. Caisses de récolte[/h2]
 [b]Le problème :[/b] une grosse récolte laisse la production éparpillée sur cent cases, et vos porteurs la ramènent au congélateur une brassée à la fois.
-[b]Ce que ça fait :[/b] ajoute une caisse légère et déplaçable à poser en bord de champ. Les moissonneurs y déposent la récolte directement. Dès qu'elle est pleine, ou que son champ est terminé, tout le lot est signalé pour l'enlèvement et part d'un coup. En dessous, c'est un bâtiment de stockage ordinaire : le transport vanilla, les groupes de stockage, l'onglet de stockage et Pick Up And Haul fonctionnent tous avec elle sans rien changer.
+[b]Ce que ça fait :[/b] ajoute une caisse légère et déplaçable à poser en bord de champ. Les moissonneurs y déposent la récolte directement. Dès qu'elle est pleine — ou que les dépôts s'arrêtent, ce qui est le signe d'un champ terminé — tout le lot est signalé pour l'enlèvement et part d'un coup. En dessous, c'est un bâtiment de stockage ordinaire : tout le transport vanilla fonctionne avec elle.
 
 [h2]6. Priorités de travail selon la météo[/h2]
-[b]Le problème :[/b] il fait 45 degrés dehors, ou il y a des retombées toxiques, et quelqu'un reste debout dans un champ à couper des plantes jusqu'à s'effondrer.
-[b]Ce que ça fait :[/b] tant que les conditions extérieures sont réellement dangereuses — canicule mortelle, vague de froid, retombées toxiques et compagnie — les types de travail extérieurs sont mis de côté pour que les colons se rabattent sur des tâches d'intérieur. L'agriculture, la coupe de plantes et le minage sont couverts, et chacun peut être exclu dans les paramètres si vous préférez gérer vous-même.
+[b]Le problème :[/b] il fait 45 degrés dehors, ou il y a des retombées toxiques, et un colon reste dans un champ à couper des plantes jusqu'à s'effondrer.
+[b]Ce que ça fait :[/b] tant que les conditions extérieures sont réellement dangereuses — canicule mortelle, vague de froid, retombées toxiques et compagnie — les types de travail extérieurs sont mis de côté pour que les colons se rabattent sur des tâches d'intérieur. L'agriculture, la coupe de plantes et le minage sont couverts, et chacun peut être exclu dans les paramètres.
 
-[h2]7. Garde-manger d'abord, cuisine consciente de la péremption[/h2]
-[b]Le problème :[/b] les cuisiniers prennent toujours les ingrédients les plus proches, donc les baies sur le point de pourrir pourrissent tranquillement pendant qu'on mange le riz frais.
-[b]Ce que ça fait :[/b] les ingrédients sont classés par temps restant avant pourrissement, les plus proches de la péremption d'abord, la distance ne servant qu'à départager. Le périssable est consommé avant de tourner. Ça ne se déclenche que si quelque chose à portée est vraiment proche de pourrir : les cuisiniers ne sont jamais envoyés loin pour rien.
+[h2]7. Garde-manger d'abord[/h2]
+[b]Le problème :[/b] les cuisiniers prennent toujours les ingrédients les plus proches : les baies sur le point de pourrir pourrissent pendant qu'on mange le riz frais.
+[b]Ce que ça fait :[/b] les ingrédients sont classés par temps restant avant pourrissement, les plus proches de la péremption d'abord, la distance ne servant qu'à départager. Ça ne se déclenche que si quelque chose à portée est vraiment proche de pourrir : les cuisiniers ne sont jamais envoyés loin pour rien.
 
 [h2]8. Repos du sol[/h2]
-[b]Le problème :[/b] laisser un champ en jachère, c'est ce que font les vrais paysans, mais dans RimWorld ça ne rapporte absolument rien. Une étape de jachère n'est que de l'attente.
-[b]Ce que ça fait :[/b] faire reposer un champ accumule une réserve de fertilité dans sa terre, et les cultures suivantes dépensent cette réserve en poussant plus vite. La réserve monte jusqu'à un plafond qui vaut à peu près une terre riche, et se vide plus lentement qu'elle ne s'est remplie : une seule jachère se répartit donc sur plusieurs récoltes. La réserve ne fait que s'ajouter à la fertilité du terrain, jamais s'en retirer : un champ ne peut donc jamais devenir incultivable, et qui ignore la jachère ne perd rien. La fenêtre de plan de champ affiche ce que chaque champ a mis de côté, et une étape de jachère peut calculer sa propre durée — juste assez de jours pour remplir la réserve — ou vous saisissez le nombre vous-même.
+[b]Le problème :[/b] laisser un champ en jachère, c'est ce que font les vrais paysans, mais dans RimWorld ça ne rapporte absolument rien.
+[b]Ce que ça fait :[/b] faire reposer un champ accumule une réserve de fertilité dans sa terre, et les cultures suivantes dépensent cette réserve en poussant plus vite. La réserve monte jusqu'à un plafond qui vaut à peu près une terre riche, et se vide plus lentement qu'elle ne s'est remplie : une seule jachère se répartit sur plusieurs récoltes. Elle ne fait que s'ajouter à la fertilité du terrain, jamais s'en retirer : un champ ne peut donc jamais devenir incultivable. Une étape de jachère peut calculer sa propre durée, ou vous saisissez le nombre de jours.
 
 [hr][/hr]
 [h1]Ajouter le mod en cours de partie[/h1]
 
-[b]Oui, et il n'y a rien à réinitialiser.[/b] Chargez une sauvegarde existante avec le mod activé et il se met simplement à fonctionner : le registre qu'il tient pour vos champs est créé vide au chargement, chaque champ démarre sans aucun plan et se comporte exactement comme avant, et vous activez ce que vous voulez champ par champ. Les nouveaux bâtiments apparaissent immédiatement dans le menu de construction. Les huit interrupteurs de module prennent effet eux aussi immédiatement, en pleine partie : vous pouvez essayer un module puis le rééteindre sans jamais redémarrer.
+[b]Oui, et il n'y a rien à réinitialiser.[/b] Chargez une sauvegarde existante avec le mod activé et il se met simplement à fonctionner : chaque champ démarre sans aucun plan et se comporte exactement comme avant, et vous activez ce que vous voulez champ par champ.
 
-Le retirer plus tard est tout aussi sûr. La sauvegarde se charge toujours ; vous perdez les plans de champ et la réserve accumulée dans les sols, et les zones retombent sur la culture définie sur la zone elle-même. Démolissez d'abord le toit vitré, l'aérateur et les caisses, sinon ces cases reviennent en simples gravats.
+Le retirer plus tard est tout aussi sûr : rien de vanilla n'est remplacé ni réécrit, donc la sauvegarde se charge toujours. Vous perdez les plans de champ et la réserve accumulée dans les sols, et les zones retombent sur la culture définie sur la zone elle-même. Démolissez d'abord le toit vitré, l'aérateur et les caisses, sinon ces cases reviennent en simples gravats.
 
 [hr][/hr]
 [h1]Compatibilité[/h1]
 
-Les listes de cultures sont interrogées dans la base de defs à l'exécution : les cultures de Vanilla Plants Expanded, de VGP et de n'importe quoi d'autre apparaissent d'elles-mêmes, sans le moindre patch. Aucun assembly tiers n'est jamais référencé : les autres mods sont détectés via la liste des mods chargés et leur contenu via des recherches de defs silencieuses, donc rien ne casse quand un mod est absent. Tous les points d'accroche sont additifs — rien de vanilla n'est remplacé, court-circuité ni réécrit — et c'est pour ça que les mods ci-dessous cohabitent avec lui au lieu de se battre.
-
-Vérifié contre les mods populaires qui touchent aux mêmes méthodes vanilla :
+Les listes de cultures sont interrogées dans la base de defs à l'exécution : les cultures de Vanilla Plants Expanded, de VGP et de n'importe quoi d'autre apparaissent d'elles-mêmes, sans le moindre patch. Aucun assembly tiers n'est jamais référencé : les autres mods sont détectés via la liste des mods chargés, donc rien ne casse quand un mod est absent. Tous les points d'accroche sont additifs.
 
 [list]
-[*][b]Smart Farming[/b] — compatible, et les deux font un travail différent. Il ne gêne jamais la rotation, car ce mod décide quoi semer sans jamais réécrire la culture définie sur la zone. Les deux mods ajoutent leur propre bouton à une zone de culture : vous avez les deux.
-[*][b]Vanilla Plants Expanded[/b] et ses sous-modules, [b]VGP[/b], [b]Medieval Overhaul[/b] — compatibles. Leurs cultures apparaissent d'elles-mêmes dans les sélecteurs. Une petite réserve : les rendements supplémentaires qu'un autre mod fait apparaître lui-même tombent au sol plutôt que dans une caisse de récolte.
-[*][b]Vanilla Expanded Framework[/b] — compatible sur les cinq méthodes partagées. Sa gestion des ingrédients agit sur les recettes à ingrédients mélangés, que le module 7 laisse délibérément tranquilles.
-[*][b]Common Sense[/b] — compatible. Même raison : il trie le chemin « ingrédients mélangés », le module 7 trie le chemin de cuisine normal.
-[*][b]Hospitality[/b], [b]Hospital[/b] — compatibles. Leurs modifications de priorités et le module 6 se cumulent, et la météo dangereuse garde le dernier mot.
-[*][b]LWM's Deep Storage[/b], [b]Adaptive Storage Framework[/b], [b]Pick Up And Haul[/b] — compatibles. Une caisse de récolte est un bâtiment de stockage ordinaire : tout ce que ces mods ajoutent au stockage s'y applique aussi.
-[*][b]Dubs Skylights[/b] et les autres mods de puits de lumière — mieux que compatibles. Leur toit est détecté et reçoit le modèle thermique de serre, et le cadre vitré de ce mod se masque tout seul pour ne jamais avoir de doublon.
-[*][b]Keyz' Allow Utilities[/b], [b]Progression: Education[/b], [b]Nice Bill Tab[/b] — compatibles, aucun recouvrement.
+[*][b]Smart Farming[/b] — compatible, et les deux font un travail différent : ce mod décide quoi semer sans jamais réécrire la culture définie sur la zone. Les deux ajoutent leur bouton à la zone : vous avez les deux.
+[*][b]Vanilla Plants Expanded[/b] et ses sous-modules, [b]VGP[/b], [b]Medieval Overhaul[/b] — compatibles. Une réserve : les rendements supplémentaires qu'un autre mod fait apparaître lui-même tombent au sol plutôt que dans une caisse.
+[*][b]Vanilla Expanded Framework[/b], [b]Common Sense[/b] — compatibles. Tous deux trient les recettes à ingrédients mélangés, que le module 7 laisse délibérément tranquilles.
+[*][b]Hospitality[/b], [b]Hospital[/b] — compatibles. Leurs modifications de priorités et le module 6 se cumulent, la météo dangereuse gardant le dernier mot.
+[*][b]LWM's Deep Storage[/b], [b]Adaptive Storage Framework[/b], [b]Pick Up And Haul[/b] — compatibles : une caisse de récolte est un bâtiment de stockage ordinaire.
+[*][b]Dubs Skylights[/b] et les autres mods de puits de lumière — mieux que compatibles : leur toit reçoit le modèle thermique de serre, et le cadre vitré de ce mod se masque pour éviter les doublons.
 [/list]
 
-Aucune contrainte d'ordre de chargement au-delà de Harmony. Pour vérifier ce qui a été détecté, le journal de démarrage contient une ligne commençant par [SACL].
+Aucune contrainte d'ordre de chargement au-delà de Harmony. Le journal de démarrage contient une ligne [SACL] avec ce qui a été détecté.
 
 [hr][/hr]
-[h1]Sauvegardes[/h1]
+[h1]Sources[/h1]
 
-Aucune classe vanilla n'est remplacée, et aucun comportement vanilla n'est contourné ni réécrit. Rien n'est greffé sur les zones de culture elles-mêmes non plus : tout ce que ce mod retient de vos champs vit dans son propre composant de carte, indexé par identifiant de zone. C'est pour ça que la sauvegarde se charge encore une fois le mod retiré.
+Code source complet, suivi des bugs et licence MIT : [url=https://github.com/AsueG/SmartAgriculture]github.com/AsueG/SmartAgriculture[/url]
 
 [b]Nécessite Harmony.[/b]

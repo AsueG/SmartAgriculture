@@ -78,6 +78,27 @@ if (-not (Test-Path $idPath)) {
     }
 }
 
+# --- Workshop descriptions -----------------------------------------------------------------------
+# The BBCode versions pasted into the Workshop page by hand. Same 8000 character cap, and the web
+# form reports going over as nothing but "a problem occurred while saving the title and description".
+
+foreach ($name in 'workshop-description-en.txt', 'workshop-description-fr.txt') {
+    $path = Join-Path $root "Media\$name"
+    if (-not (Test-Path $path)) {
+        Warn "Media\$name is missing."
+        continue
+    }
+    # Counted as characters, not bytes: the accents in the French text are two bytes each in UTF-8
+    # and Steam counts neither those nor a lone LF the way the browser sends CRLF.
+    $text = [System.IO.File]::ReadAllText($path)
+    $normalized = ($text -replace "`r`n", "`n") -replace "`n", "`r`n"
+    if ($normalized.Length -gt $maxDescription) {
+        Fail ("Media\{0} is {1} chars, Steam allows {2}. Cut {3}." -f $name, $normalized.Length, $maxDescription, ($normalized.Length - $maxDescription))
+    } else {
+        Write-Host ("  {0} {1}/{2} chars" -f $name, $normalized.Length, $maxDescription)
+    }
+}
+
 $dllPath = Join-Path $root '1.6\Assemblies\SmartAgriculture.dll'
 if (-not (Test-Path $dllPath)) {
     Fail "1.6\Assemblies\SmartAgriculture.dll is missing; a download from GitHub would be inert."
