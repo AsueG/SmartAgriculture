@@ -63,8 +63,14 @@
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
   </ItemGroup>
 
+  <!-- Checks the metadata Steam would reject and the translations a player would notice.
+       Runs on its own with "dotnet build -t:Preflight". -->
+  <Target Name="Preflight" DependsOnTargets="Build">
+    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildProjectDirectory)\..\Tools\preflight.ps1&quot;" />
+  </Target>
+
   <!-- "dotnet build -t:Deploy" copies the whole mod into the RimWorld Mods folder. -->
-  <Target Name="Deploy" DependsOnTargets="Build">
+  <Target Name="Deploy" DependsOnTargets="Build;Preflight">
     <PropertyGroup>
       <DeployDir>$(RimWorldModsDir)\SmartAgriculture</DeployDir>
     </PropertyGroup>

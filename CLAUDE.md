@@ -10,6 +10,11 @@ dotnet build -t:Deploy -v:m
 `Deploy` copies `About/`, `1.6/` and `Languages/` into the RimWorld `Mods/` folder. Override the
 managed folder with `-p:RimWorldManaged="…\RimWorldWin64_Data\Managed"` if the Steam path guess fails.
 
+`Deploy` first runs `Tools\preflight.ps1` (also reachable as `dotnet build -t:Preflight`), which fails
+the build on anything Steam would reject — an over-long title or description, an oversized or missing
+`Preview.png`, an empty `<modVersion>`, a non-numeric `PublishedFileId.txt` — and on a translation key
+or def label that exists in one language but not the other. Fix the cause; do not bypass it.
+
 `About/About.xml` carries `<modVersion>`, which the game only ever displays — nothing parses it. Bump it
 on release; leaving it out is what makes the mod list read "unknown".
 

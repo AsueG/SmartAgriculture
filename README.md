@@ -58,7 +58,7 @@ build — reloading a save picks up neither.
 | `1.6/Assemblies/` | build output |
 | `Languages/` | English and French keyed strings and def injections |
 | `Source/` | C# project, one folder per module under `Modules/` |
-| `Tools/` | PowerShell generators for the preview image and the textures |
+| `Tools/` | preflight checks, plus PowerShell generators for the preview image and the textures |
 
 ## Design constraints
 
