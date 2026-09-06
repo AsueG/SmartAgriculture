@@ -162,6 +162,7 @@
   <SACL.CrateFill>Piles : {0} sur {1} ({2} objets)</SACL.CrateFill>
   <SACL.CrateStateFilling>en cours de remplissage</SACL.CrateStateFilling>
   <SACL.CrateStateFull>pleine</SACL.CrateStateFull>
+  <SACL.CrateStateNoRoom>plus d'emplacement libre</SACL.CrateStateNoRoom>
   <SACL.CrateStateExporting>en attente des porteurs</SACL.CrateStateExporting>
   <SACL.CratePriority>Priorité de stockage : {0}</SACL.CratePriority>
   <SACL.CratePriorityExporting>Priorité de stockage : {0} (repassera à {1} une fois vidée)</SACL.CratePriorityExporting>

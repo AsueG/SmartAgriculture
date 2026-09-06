@@ -47,7 +47,6 @@ namespace SmartAgriculture
             this.onPick = onPick;
             this.extras = extras ?? new List<Extra>();
 
-            // Same order the vanilla menu uses: food first, then medicine, beauty, everything else.
             sowable.SortBy(d => 0f - PlantListPriority(d), d => d.label);
 
             optionalTitle = title;
@@ -67,11 +66,18 @@ namespace SmartAgriculture
             search.Focus();
         }
 
+        /// <summary>
+        /// Food first, then medicine and beauty, then the industrial crops, and trees dead last.
+        /// Trees sort below everything on purpose: there are around twenty sowable ones against a
+        /// dozen crops, so anywhere higher they bury cotton and devilstrand under a wall of saplings.
+        /// They are still offered - a tree farm is a legitimate zone - but a rotation stage planted
+        /// with one holds for years, since the next stage only starts on a bare field.
+        /// </summary>
         private static float PlantListPriority(ThingDef def)
         {
             if (def.plant.IsTree)
             {
-                return 1f;
+                return -1f;
             }
             switch (def.plant.purpose)
             {

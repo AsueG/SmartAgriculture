@@ -116,7 +116,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>SACL_FieldCrate</defName>
     <label>field crate</label>
-    <description>A light slatted crate meant to be dragged out to the edge of a field. Harvesters drop their load straight into it instead of scattering produce across the soil.\n\nWhile it fills up it keeps a high storage priority so haulers leave it alone. Once it is full - or once the field it serves has been completely harvested - it drops to a low priority, which is what makes haulers carry the whole batch off to a cold room in one trip.\n\nIt only ever accepts what fields actually produce - crops from other mods included - so haulers can never fill it with wood, steel or weapons. Its storage tab narrows that down further, crop by crop.</description>
+    <description>A light slatted crate meant to be dragged out to the edge of a field. Harvesters drop their load straight into it instead of scattering produce across the soil.\n\nWhile it fills up it keeps a high storage priority so haulers leave it alone. Once it is full - or once the deposits stop, which is what a finished field looks like from here - it drops to a low priority, which is what makes haulers carry the whole batch off to a cold room in one trip.\n\nIt only ever accepts what fields actually produce - crops from other mods included - so haulers can never fill it with wood, steel or weapons. Its storage tab narrows that down further, crop by crop.</description>
     <thingClass>SmartAgriculture.Building_FieldCrate</thingClass>
     <graphicData>
       <texPath>Things/Building/SACL/FieldCrate</texPath>
