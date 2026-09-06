@@ -77,3 +77,7 @@ These are deliberate and load-bearing; anything added should hold to them.
 
 Ships with English and French. Adding a language means a new folder under `Languages/` mirroring
 `Languages/English/`.
+
+## License
+
+MIT — see [LICENSE](LICENSE).
