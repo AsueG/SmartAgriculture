@@ -3,6 +3,7 @@
   <packageId>sacl.smartagriculture</packageId>
   <name>Smart Agriculture, Climate &amp; Colony Logistics</name>
   <author>Asue</author>
+  <url>https://github.com/AsueG/SmartAgriculture</url>
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>
@@ -88,5 +89,9 @@ No load order requirements beyond Harmony. If you ever want to check what was de
 
 SAVES
 
-No vanilla class is replaced, and no vanilla behaviour is skipped or rewritten. Nothing is bolted onto the grow zones themselves either: everything this mod remembers about your fields lives in its own map component, keyed by zone ID, which is why the save still loads once you remove the mod.</description>
+No vanilla class is replaced, and no vanilla behaviour is skipped or rewritten. Nothing is bolted onto the grow zones themselves either: everything this mod remembers about your fields lives in its own map component, keyed by zone ID, which is why the save still loads once you remove the mod.
+
+SOURCE
+
+Full source, issue tracker and MIT licence: https://github.com/AsueG/SmartAgriculture</description>
 </ModMetaData>
