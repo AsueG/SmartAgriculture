@@ -32,19 +32,21 @@ if (-not (Test-Path $aboutPath)) {
         }
     }
 
-    if ($meta.name -and $meta.name.Length -gt $maxTitle) {
-        Fail ("About.xml: <name> is {0} chars, Steam allows {1}." -f $meta.name.Length, $maxTitle)
+    $titleBytes = [System.Text.Encoding]::UTF8.GetByteCount([string]$meta.name)
+    if ($titleBytes -gt $maxTitle) {
+        Fail ("About.xml: <name> is {0} UTF-8 bytes, Steam allows {1}." -f $titleBytes, $maxTitle)
     }
 
-    # Measured on the decoded text with CRLF, which is the worst case Steam can count as bytes.
+    # Measured on the decoded text with CRLF, in UTF-8 bytes: see the Media check below.
     $description = [string]$meta.description
-    $length = ($description -replace "`r`n", "`n" -replace "`n", "`r`n").Length
+    $normalized = ($description -replace "`r`n", "`n") -replace "`n", "`r`n"
+    $bytes = [System.Text.Encoding]::UTF8.GetByteCount($normalized)
     if ([string]::IsNullOrWhiteSpace($description)) {
         Fail "About.xml: <description> is empty."
-    } elseif ($length -gt $maxDescription) {
-        Fail ("About.xml: <description> is {0} chars, Steam allows {1}. Cut {2}." -f $length, $maxDescription, ($length - $maxDescription))
+    } elseif ($bytes -gt $maxDescription) {
+        Fail ("About.xml: <description> is {0} UTF-8 bytes, Steam allows {1}. Cut {2}." -f $bytes, $maxDescription, ($bytes - $maxDescription))
     } else {
-        Write-Host ("  description {0}/{1} chars" -f $length, $maxDescription)
+        Write-Host ("  About.xml description {0}/{1} bytes" -f $bytes, $maxDescription)
     }
 
     # Steam builds the item tags from these, so an empty list uploads an untagged item.
@@ -88,14 +90,16 @@ foreach ($name in 'workshop-description-en.txt', 'workshop-description-fr.txt') 
         Warn "Media\$name is missing."
         continue
     }
-    # Counted as characters, not bytes: the accents in the French text are two bytes each in UTF-8
-    # and Steam counts neither those nor a lone LF the way the browser sends CRLF.
+    # Measured in UTF-8 bytes, which is the binding limit: k_cchPublishedDocumentDescriptionMax counts
+    # C chars, so every accent costs two. The English text saved fine at 7652 characters while the
+    # French text failed at 7789, which is how this was pinned down.
     $text = [System.IO.File]::ReadAllText($path)
     $normalized = ($text -replace "`r`n", "`n") -replace "`n", "`r`n"
-    if ($normalized.Length -gt $maxDescription) {
-        Fail ("Media\{0} is {1} chars, Steam allows {2}. Cut {3}." -f $name, $normalized.Length, $maxDescription, ($normalized.Length - $maxDescription))
+    $bytes = [System.Text.Encoding]::UTF8.GetByteCount($normalized)
+    if ($bytes -gt $maxDescription) {
+        Fail ("Media\{0} is {1} UTF-8 bytes ({2} chars), Steam allows {3}. Cut {4}." -f $name, $bytes, $normalized.Length, $maxDescription, ($bytes - $maxDescription))
     } else {
-        Write-Host ("  {0} {1}/{2} chars" -f $name, $normalized.Length, $maxDescription)
+        Write-Host ("  {0} {1}/{2} bytes, {3} chars" -f $name, $bytes, $maxDescription, $normalized.Length)
     }
 }
 

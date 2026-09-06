@@ -22,10 +22,19 @@ on release; leaving it out is what makes the mod list read "unknown".
 publishes a *second* item instead of updating the existing one. It is not a secret — the same number is
 in the public Workshop URL — and only the owning Steam account can push an update.
 
-The Workshop description is capped at **8000 characters** by `SteamUGC.SetItemDescription`, and RimWorld
-passes `<description>` through untruncated, so going over fails the upload with a bare
-`OnItemSubmitted failure. Result: InvalidParam`. The description is also read at process start, so an
-edit needs a game restart before the upload will pick it up.
+The Workshop description is capped at 8000 by `SteamUGC.SetItemDescription`, and RimWorld passes
+`<description>` through untruncated, so going over fails the upload with a bare
+`OnItemSubmitted failure. Result: InvalidParam`. **The cap counts UTF-8 bytes, not characters** —
+`k_cchPublishedDocumentDescriptionMax` counts C `char`s, so every accent costs two. This is measured,
+not assumed: the English page saved at 7652 characters while the French one was refused at 7789.
+The Workshop page's web form enforces the same limit, reporting it only as "a problem occurred while
+saving the title and description". The description is also read at process start, so an edit needs a
+game restart before the upload will pick it up.
+
+`Media/workshop-description-*.txt` are the BBCode descriptions, pasted into the Workshop page by hand;
+`About.xml` carries the plain-text one shown in the in-game mod list. The game overwrites the item's
+default title and description from `About.xml` on **every** upload, so upload from the game first and
+paste the BBCode afterwards. A per-language override on the Workshop page survives re-uploads.
 
 `1.6/Assemblies/SmartAgriculture.dll` is committed on purpose — a GitHub download has to be playable
 without a build step. Commit it with the source change that produced it.

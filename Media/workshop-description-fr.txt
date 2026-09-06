@@ -1,6 +1,6 @@
 [h1]Smart Agriculture, Climate & Colony Logistics[/h1]
 
-Huit modules indépendants d'agriculture, de climat et de logistique. Chacun s'active ou se désactive depuis les paramètres du mod à n'importe quel moment, en pleine partie, sans redémarrer — et un module désactivé ne fait strictement rien.
+Huit modules indépendants d'agriculture, de climat et de logistique. Chacun s'active ou se désactive depuis les paramètres du mod à tout moment, en pleine partie, sans redémarrer — et un module désactivé ne fait strictement rien.
 
 Tout se règle au même endroit : [b]sélectionnez une zone de culture et cliquez sur le nouveau bouton de sa barre d'actions.[/b]
 
@@ -10,7 +10,7 @@ Tout se règle au même endroit : [b]sélectionnez une zone de culture et clique
 [h2]1. Rotation à l'échelle du champ[/h2]
 [b]Le problème :[/b] vous changez la culture d'une zone, et comme vos colons récoltent case par case, le champ devient un damier de riz à moitié poussé collé à du maïs mûr.
 [b]Ce que ça fait :[/b] la zone suit une liste ordonnée de 2 à 4 cultures, et ne passe à la suivante que lorsque le dernier plant de la culture en cours a disparu. Les cases récoltées tôt restent nues et attendent le reste du champ. Une passe propre par culture au lieu d'un désordre permanent.
-Deux autres types d'étape existent : la [b]jachère[/b], qui fait reposer la terre et se paie en croissance plus tard (module 8), et [b]aléatoire[/b], qui tire une culture capable de survivre — et idéalement de mûrir — dans le temps qu'il fait à ce moment-là.
+Deux autres types d'étape existent : la [b]jachère[/b], qui fait reposer la terre et se paie en croissance plus tard (module 8), et [b]aléatoire[/b], qui tire une culture capable de mûrir dans le temps qu'il fait à ce moment-là.
 
 [h2]2. Culture pilotée par les stocks[/h2]
 [b]Le problème :[/b] vous avez 4000 riz en réserve et vos fermiers continuent de planter du riz.
@@ -22,7 +22,7 @@ Deux autres types d'étape existent : la [b]jachère[/b], qui fait reposer la te
 
 [h2]4. Vrai climat de serre[/h2]
 [b]Le problème :[/b] une pièce couverte de verre se comporte exactement comme une pièce couverte de pierre. Le soleil n'a aucun effet sur la température.
-[b]Ce que ça fait :[/b] une pièce fermée sous toit transparent se réchauffe au fil de la journée proportionnellement à la lumière réelle, au lieu de suivre bêtement la température extérieure. Ajoute un cadre vitré pour construire ce toit, et un aérateur automatique qui s'ouvre pour évacuer la chaleur dès que la pièce dépasse la consigne. Des cultures d'hiver gratuites si vous construisez bien — et un vrai risque de cuire vos récoltes en été sinon.
+[b]Ce que ça fait :[/b] une pièce fermée sous toit transparent se réchauffe au fil de la journée proportionnellement à la lumière réelle, au lieu de suivre la température extérieure. Ajoute un cadre vitré pour construire ce toit, et un aérateur automatique qui s'ouvre pour évacuer la chaleur dès que la pièce dépasse la consigne. Des cultures d'hiver gratuites si vous construisez bien — et un vrai risque de cuire vos récoltes en été sinon.
 
 [h2]5. Caisses de récolte[/h2]
 [b]Le problème :[/b] une grosse récolte laisse la production éparpillée sur cent cases, et vos porteurs la ramènent au congélateur une brassée à la fois.
@@ -30,11 +30,11 @@ Deux autres types d'étape existent : la [b]jachère[/b], qui fait reposer la te
 
 [h2]6. Priorités de travail selon la météo[/h2]
 [b]Le problème :[/b] il fait 45 degrés dehors, ou il y a des retombées toxiques, et un colon reste dans un champ à couper des plantes jusqu'à s'effondrer.
-[b]Ce que ça fait :[/b] tant que les conditions extérieures sont réellement dangereuses — canicule mortelle, vague de froid, retombées toxiques et compagnie — les types de travail extérieurs sont mis de côté pour que les colons se rabattent sur des tâches d'intérieur. L'agriculture, la coupe de plantes et le minage sont couverts, et chacun peut être exclu dans les paramètres.
+[b]Ce que ça fait :[/b] tant que les conditions extérieures sont réellement dangereuses — canicule mortelle, vague de froid, retombées toxiques et compagnie — les types de travail extérieurs sont mis de côté pour que les colons se rabattent sur des tâches d'intérieur. L'agriculture, la coupe de plantes et le minage sont couverts, et chacun peut être exclu.
 
 [h2]7. Garde-manger d'abord[/h2]
 [b]Le problème :[/b] les cuisiniers prennent toujours les ingrédients les plus proches : les baies sur le point de pourrir pourrissent pendant qu'on mange le riz frais.
-[b]Ce que ça fait :[/b] les ingrédients sont classés par temps restant avant pourrissement, les plus proches de la péremption d'abord, la distance ne servant qu'à départager. Ça ne se déclenche que si quelque chose à portée est vraiment proche de pourrir : les cuisiniers ne sont jamais envoyés loin pour rien.
+[b]Ce que ça fait :[/b] les ingrédients sont classés par temps restant avant pourrissement, la distance ne servant qu'à départager. Ça ne se déclenche que si quelque chose à portée est vraiment proche de pourrir : les cuisiniers ne sont jamais envoyés loin pour rien.
 
 [h2]8. Repos du sol[/h2]
 [b]Le problème :[/b] laisser un champ en jachère, c'est ce que font les vrais paysans, mais dans RimWorld ça ne rapporte absolument rien.
@@ -45,15 +45,15 @@ Deux autres types d'étape existent : la [b]jachère[/b], qui fait reposer la te
 
 [b]Oui, et il n'y a rien à réinitialiser.[/b] Chargez une sauvegarde existante avec le mod activé et il se met simplement à fonctionner : chaque champ démarre sans aucun plan et se comporte exactement comme avant, et vous activez ce que vous voulez champ par champ.
 
-Le retirer plus tard est tout aussi sûr : rien de vanilla n'est remplacé ni réécrit, donc la sauvegarde se charge toujours. Vous perdez les plans de champ et la réserve accumulée dans les sols, et les zones retombent sur la culture définie sur la zone elle-même. Démolissez d'abord le toit vitré, l'aérateur et les caisses, sinon ces cases reviennent en simples gravats.
+Le retirer plus tard est tout aussi sûr : rien de vanilla n'est remplacé ni réécrit, donc la sauvegarde se charge toujours. Vous perdez les plans de champ et la réserve accumulée, et les zones retombent sur la culture définie sur la zone. Démolissez d'abord le toit vitré, l'aérateur et les caisses, sinon ces cases reviennent en simples gravats.
 
 [hr][/hr]
 [h1]Compatibilité[/h1]
 
-Les listes de cultures sont interrogées dans la base de defs à l'exécution : les cultures de Vanilla Plants Expanded, de VGP et de n'importe quoi d'autre apparaissent d'elles-mêmes, sans le moindre patch. Aucun assembly tiers n'est jamais référencé : les autres mods sont détectés via la liste des mods chargés, donc rien ne casse quand un mod est absent. Tous les points d'accroche sont additifs.
+Les listes de cultures sont interrogées dans la base de defs à l'exécution : les cultures de Vanilla Plants Expanded, de VGP et des autres mods apparaissent d'elles-mêmes, sans le moindre patch. Aucun assembly tiers n'est jamais référencé : les autres mods sont détectés via la liste des mods chargés, donc rien ne casse quand un mod est absent. Tous les points d'accroche sont additifs.
 
 [list]
-[*][b]Smart Farming[/b] — compatible, et les deux font un travail différent : ce mod décide quoi semer sans jamais réécrire la culture définie sur la zone. Les deux ajoutent leur bouton à la zone : vous avez les deux.
+[*][b]Smart Farming[/b] — compatible : ce mod décide quoi semer sans jamais réécrire la culture définie sur la zone. Les deux ajoutent leur bouton à la zone.
 [*][b]Vanilla Plants Expanded[/b] et ses sous-modules, [b]VGP[/b], [b]Medieval Overhaul[/b] — compatibles. Une réserve : les rendements supplémentaires qu'un autre mod fait apparaître lui-même tombent au sol plutôt que dans une caisse.
 [*][b]Vanilla Expanded Framework[/b], [b]Common Sense[/b] — compatibles. Tous deux trient les recettes à ingrédients mélangés, que le module 7 laisse délibérément tranquilles.
 [*][b]Hospitality[/b], [b]Hospital[/b] — compatibles. Leurs modifications de priorités et le module 6 se cumulent, la météo dangereuse gardant le dernier mot.
